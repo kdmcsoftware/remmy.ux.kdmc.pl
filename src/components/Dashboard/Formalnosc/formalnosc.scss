@@ -1,0 +1,39 @@
+.formalnosc {
+    border: 1px solid #639AE0;
+    padding: 10px;
+    border-radius: 4px;
+    position: relative;
+    text-transform: uppercase;
+    color: #314897;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: 400px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .helpIcon {
+  
+      .helpText {
+        display: none;
+        position: absolute;
+        right: 20px;
+        background-color: #E5E5E5;
+        border-radius: 4px;
+        padding: 5px;
+        min-width: 100px;
+        color: black;
+        text-transform: none;
+        font-weight: 400;
+        text-align: center;
+        z-index: 100;
+      }
+      
+      &:hover .helpText {
+        display: block !important;
+      }
+    }
+  }

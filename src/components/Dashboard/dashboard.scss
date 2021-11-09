@@ -9,3 +9,21 @@
     color: #314897;
   }
 }
+
+.showTopBorder {
+  padding: 10px 20px;
+  position: relative;
+
+  @media screen and (max-width: 1200px) {
+    border-top: 1px solid #E4E4E4;
+  }
+}
+
+.showLeftBorder {
+  width: 100%;
+  height: 80%;
+  border-left: 2px solid #E4E4E4;
+  position: absolute;
+  top: 10%;
+  left: 0;
+}

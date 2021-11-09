@@ -1,12 +1,9 @@
 import React from "react";
 import { Button, Grid } from "@mui/material";
 
-export const HelpBlock = ({ icon, buttonName, children }) => {
+export const HelpBlock = ({ icon, buttonName, children, showBorder }) => {
     return (
-        <div style={{
-            borderBottom: '1px solid #E4E4E4',
-            padding: '5px'
-        }}>
+        <div style={{ borderBottom: `${showBorder && '1px solid #E4E4E4'}`, padding: '5px' }}>
             <Grid container className='d-flex justify-content-center'>
                 <Grid item sm={1} className='d-flex justify-content-center align-items-center'>
                     <img src={icon} />

@@ -99,7 +99,8 @@ export const Dashboard = () => {
                                             </HeaderBlock>
                                         </Grid>
 
-                                        <Grid item xxs={12} md={12} lg={6} xl={6} xxl={6} sx={{ padding: '10px 20px' }}>
+                                        <Grid item xxs={12} md={12} lg={6} xl={6} xxl={6} className='showTopBorder'>
+                                            <div className='showLeftBorder'></div>
                                             <HeaderBlock
                                                 title='Twój doradca'
                                                 description='W każdej chwili możesz skonsultować się ze swoim doradcą finansowym'
@@ -107,7 +108,7 @@ export const Dashboard = () => {
                                             >
                                                 <div className='mt--10'>
                                                     <Grid container className='d-flex justify-content-center'>
-                                                        <Grid item xs={4} sm={3} md={2.5} className='mb--10'>
+                                                        <Grid item xs={4} sm={3} md={2.5} lg={4} className='mb--10'>
                                                             <div className='d-flex align-items-start'>
                                                                 <div className='d-flex flex-column align-items-center'>
                                                                     <img alt='user icon' className='h--60' src={userIcon} />
@@ -123,7 +124,7 @@ export const Dashboard = () => {
 
                                                             </div>
                                                         </Grid>
-                                                        <Grid item xs={8} sm={9} md={9.5} className='pe--15'>
+                                                        <Grid item xs={8} sm={9} md={9.5} lg={8} className='pe--15'>
                                                             <div>
                                                                 <span style={{ fontWeight: '600', color: '#314897', margin: '0px 0px 10px 0px' }}>Jan Kowaski</span>
                                                             </div>
@@ -191,9 +192,9 @@ export const Dashboard = () => {
                                     </DashboardBlock>
                                 </Grid>
 
-                                <Grid item xs={12} md={6} lg={6} xl={6} xxl={6} className='mt-15'>
+                                <Grid item xs={12} md={6} lg={6} xl={6} xxl={6} className='mt--15'>
                                     <DashboardBlock title='Twoje rozwiązanie'>
-                                        <HelpBlock icon={pko}>
+                                        <HelpBlock icon={pko} showBorder={true}>
                                             <Grid container spacing={1} className='d-flex'>
                                                 <Grid item xxs={12} xs={6} lg={3} xl={3} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
                                                     <span style={{ color: '#639AE0', fontWeight: '600' }}>Rata</span>
@@ -213,7 +214,7 @@ export const Dashboard = () => {
                                                 </Grid>
                                             </Grid>
                                         </HelpBlock>
-                                        <HelpBlock icon={pzu}>
+                                        <HelpBlock icon={pzu} showBorder={true}>
                                             <Grid container spacing={1} sx={{ display: 'flex' }}>
                                                 <Grid item xs={12} className='d-flex flex-column justify-content-center align-items-center text-center'>
                                                     <span style={{ color: '#639AE0', fontWeight: '600' }}>Ubezpieczenie wkładu własnego</span>

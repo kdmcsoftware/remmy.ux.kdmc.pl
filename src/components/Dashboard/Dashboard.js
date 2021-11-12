@@ -141,7 +141,7 @@ export const Dashboard = () => {
 
                                 <Grid item xs={12} md={6} xl={6} xxl={6} className='mt--15'>
                                     <DashboardBlock title='Formalności'>
-                                        <Grid container>
+                                        <Grid container className='mt--15'>
                                             <Grid item xxs={12} className='text-center'>
                                                 <Formalnosc title='Zdolność kredytowa' isActive={true} helpText='Lorem ipsum dolor sit amet, consectetur adipiscing elit' />
                                                 <div className='d-flex justify-content-center'>

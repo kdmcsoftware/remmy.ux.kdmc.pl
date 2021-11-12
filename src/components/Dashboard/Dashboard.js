@@ -170,10 +170,10 @@ export const Dashboard = () => {
                                             </Grid>
                                             <Grid item xxs={12}>
                                                 <Grid container className='d-flex justify-content-between align-items-center'>
-                                                    <Grid item xxs={5} xs={5}>
+                                                    <Grid item xxs={5.5} xs={5}>
                                                         <Formalnosc title='Wkład własny' />
                                                     </Grid>
-                                                    <Grid item xxs={5} xs={5}>
+                                                    <Grid item xxs={5.5} xs={5}>
                                                         <Formalnosc title='Księga wieczysta' />
                                                     </Grid>
                                                     <Grid item xxs={12} className='d-flex justify-content-center align-items-center'>
@@ -196,19 +196,19 @@ export const Dashboard = () => {
                                     <DashboardBlock title='Twoje rozwiązanie'>
                                         <HelpBlock icon={pko} showBorder={true}>
                                             <Grid container spacing={1} className='d-flex'>
-                                                <Grid item xxs={12} xs={6} lg={3} xl={3} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
+                                                <Grid item xxs={12} xs={2} sm={2} md={5} lg={2} xl={2} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
                                                     <span style={{ color: '#639AE0', fontWeight: '600' }}>Rata</span>
                                                     <span>1024</span>
                                                 </Grid>
-                                                <Grid item xxs={12} xs={6} lg={3} xl={3} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
+                                                <Grid item xxs={12} xs={2.5} sm={3} md={7} lg={3} xl={3} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
                                                     <span style={{ color: '#639AE0', fontWeight: '600' }}>Prowizja</span>
                                                     <span>0 %</span>
                                                 </Grid>
-                                                <Grid item xxs={12} xs={6} lg={3} xl={3} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
+                                                <Grid item xxs={12} xs={2.5} sm={3} md={5} lg={2} xl={3} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
                                                     <span style={{ color: '#639AE0', fontWeight: '600' }}>RRSO</span>
                                                     <span>1,21 %</span>
                                                 </Grid>
-                                                <Grid item xxs={12} xs={6} lg={3} xl={3} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
+                                                <Grid item xxs={12} xs={5} sm={4} md={7} lg={5} xl={4} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
                                                     <span style={{ color: '#639AE0', fontWeight: '600' }}>Oprocentowanie</span>
                                                     <span>2,4 %</span>
                                                 </Grid>
@@ -228,7 +228,7 @@ export const Dashboard = () => {
                                             </Grid>
                                         </HelpBlock>
                                         <HelpBlock icon={flaga}>
-                                            <span style={{ color: '#639AE0', fontWeight: '600' }}>Kwalifikujesz się na “Mieszkanie bez wkładu własnego”</span>
+                                            <span style={{ color: '#639AE0', fontWeight: '600', padding: '0px 5px' }}>Kwalifikujesz się na “Mieszkanie bez wkładu własnego”</span>
                                         </HelpBlock>
 
                                         <DashboardBlock title='Sprawdź zdolność kredytową'>
@@ -238,7 +238,7 @@ export const Dashboard = () => {
                                                 </Grid>
                                                 <Grid item xxs={4}>
                                                     <Button variant="outlined" size='small'
-                                                        sx={{ color: '#314897' }}>sprawdź zdolność kredytową</Button>
+                                                        sx={{ fontFamily: 'Montserrat', color: '#314897' }}>sprawdź zdolność kredytową</Button>
                                                 </Grid>
                                             </Grid>
                                         </DashboardBlock>

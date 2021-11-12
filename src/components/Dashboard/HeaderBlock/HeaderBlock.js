@@ -11,12 +11,12 @@ export const HeaderBlock = ({ title, description, buttonName, children }) => {
                 <Grid item xs={12}>
                     <span style={{ color: '#639AE0' }} >{description}</span>
                 </Grid>
-                <Grid item sm={9} xxl={8}>
+                <Grid item xxs={12} sm={9} xxl={8}>
                     {children}
                 </Grid>
                 <Grid item sm={3} xxl={4}>
                     <Button variant="contained" size='large'
-                        sx={{ mt: '20px', color: '#FFFFFF', backgroundColor: '#314897' }}>{buttonName}</Button>
+                        sx={{ fontFamily: 'Montserrat', mt: '20px', color: '#FFFFFF', backgroundColor: '#314897' }}>{buttonName}</Button>
                 </Grid>
             </Grid>
         </div>

@@ -5,20 +5,20 @@ export const HelpBlock = ({ icon, buttonName, children, showBorder }) => {
     return (
         <div style={{ borderBottom: `${showBorder && '1px solid #E4E4E4'}`, padding: '5px' }}>
             <Grid container className='d-flex justify-content-center'>
-                <Grid item sm={1} className='d-flex justify-content-center align-items-center'>
-                    <img src={icon} />
+                <Grid item xxs={12} sm={1} className='d-flex justify-content-center align-items-center'>
+                    <img alt='icon' src={icon} />
                 </Grid>
 
-                <Grid item sm={9} className='d-flex justify-content-center align-items-center' sx={{
+                <Grid item xxs={12} sm={9} className='d-flex justify-content-center align-items-center' sx={{
                     textAlign: 'center',
                     p: '10px'
                 }}>
                     {children}
                 </Grid>
 
-                <Grid item sm={2} className='d-flex justify-content-center align-items-center'>
+                <Grid item xxs={12} sm={2} className='d-flex justify-content-center align-items-center'>
                     <Button variant="outlined" size='small'
-                        sx={{ color: '#314897' }}>{buttonName ? buttonName : 'Więcej'}</Button>
+                        sx={{ fontFamily: 'Montserrat', color: '#314897' }}>{buttonName ? buttonName : 'Więcej'}</Button>
                 </Grid>
             </Grid>
         </div>

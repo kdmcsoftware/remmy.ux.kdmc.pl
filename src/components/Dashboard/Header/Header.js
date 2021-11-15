@@ -7,12 +7,12 @@ import './header.scss'
 export const Header = () => {
     return (
         <Grid container className='d-flex align-items-center header'>
-            <Grid item className='mt--5' xxs={4} xs={3} sm={2} md={1.5} lg={1} >
+            <Grid item className='mt--5' xxs={12} xs={3} sm={2} md={2} lg={1} >
                 <div>
                     <img alt="profileImg" style={{ borderRadius: "50px" }} src={profileImg} />
                 </div>
             </Grid>
-            <Grid item className='mt--5' xxs={12} xs={9} md={6.5} lg={7}>
+            <Grid item className='mt--5 ' xxs={12} xs={9} md={6} lg={7}>
                 <div className=' me-auto'>
                     <span className='headerTitle'>Witam Tomek!</span><br />
                     <span className='headerDescription'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
@@ -21,7 +21,7 @@ export const Header = () => {
             <Grid item className='mt--5' xxs={12} md={4}>
                 <div className="progressInHeader">
                     <span className='me--15'>Gotowność do aplikowania</span>
-                    <Progress size={70} value={70} showText={false} />
+                    <Progress size={70} value={70} />
                 </div>
             </Grid>
         </Grid>

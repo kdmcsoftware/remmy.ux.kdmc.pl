@@ -1,10 +1,9 @@
-import { Button, createTheme, Grid, ThemeProvider } from "@mui/material";
-import React from "react";
+import { Button, createTheme, Grid, ThemeProvider, TableContainer, Table, TableHead, TableRow, TableBody, TableCell, Paper } from "@mui/material";
+import React, { useState, useEffect } from "react";
 import './dashboard.scss';
 import { DashboardBlock } from "./DashboardBlock/DashboardBlock";
 import { DashboardMenu } from "./DashboardMenu/DashboardMenu";
 import { Header } from './Header/Header';
-import { HelpBlock } from "./HelpBlock";
 import bankPekao from './img/bankPekao.png';
 import bnp from './img/bnp.png';
 import ing from './img/ing.png';
@@ -17,6 +16,7 @@ import SavingsRoundedIcon from '@mui/icons-material/SavingsRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 
 const theme = createTheme({
     breakpoints: {
@@ -34,16 +34,46 @@ const theme = createTheme({
 
 export const DashboardNext = () => {
 
+    const [bestOffer, setBestOffer] = useState(0)
+
+    useEffect(() => {
+        findBestOffer()
+    }, [])
+
+    useEffect(() => {
+        console.log(bestOffer)
+    }, [])
+
+    const banks = [
+        { img: ing, installment: '1135 PLN', commission: '0,1 %', rrso: '1,23 %', interestRate: '2,5 %', loanChance: '70 %' },
+        { img: pko, installment: '1024 PLN', commission: '0 %', rrso: '1,21 %', interestRate: '2,4 %', loanChance: '90 %' },
+        { img: bnp, installment: '1135 PLN', commission: '0,1 %', rrso: '1,23 %', interestRate: '2,5 %', loanChance: '70 %' },
+        { img: mBank, installment: '1246 PLN', commission: '0,2 %', rrso: '1,25 %', interestRate: '2,7 %', loanChance: '60 %' },
+        { img: bankPekao, installment: '1246 PLN', commission: '0,2 %', rrso: '1,25 %', interestRate: '2,7 %', loanChance: '60 %' }
+    ]
+
+    const findBestOffer = () => {
+        const helpArray = []
+        banks.forEach((item) => {
+            helpArray.push(item.loanChance.slice(0, -2))
+        })
+        const max = Math.max(...helpArray)
+        setBestOffer(max)
+    }
+
+
     return (
         <ThemeProvider theme={theme}>
             <div className='dashboard'>
                 <Grid container className='h-100'>
+                    {/* <Grid item xxs={12} md='auto' xl={2}> */}
                     <Grid item xxs={12} md={0.7} lg={0.5} xl={2}>
                         <div className='h-100'>
                             <DashboardMenu />
                         </div>
                     </Grid>
 
+                    {/* <Grid item xxs={12} md={11} xl={10}> */}
                     <Grid item xxs={12} md={11.3} lg={11.5} xl={10}>
                         <div>
                             <Grid container className='d-flex justify-content-center'>
@@ -53,29 +83,46 @@ export const DashboardNext = () => {
 
                                 <Grid item xs={12} className='mt--15'>
                                     <DashboardBlock title='Twoje rozwiązanie'>
-                                        <HelpBlock icon={pko} showBorder={true}>
-                                            <Grid container spacing={1} className='d-flex'>
-                                                <Grid item xxs={12} xs={2} sm={2} md={5} lg={2} xl={2} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
-                                                    <span style={{ color: '#639AE0', fontWeight: '600' }}>Rata</span>
-                                                    <span>1024</span>
-                                                </Grid>
-                                                <Grid item xxs={12} xs={2.5} sm={3} md={7} lg={3} xl={3} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
-                                                    <span style={{ color: '#639AE0', fontWeight: '600' }}>Prowizja</span>
-                                                    <span>0 %</span>
-                                                </Grid>
-                                                <Grid item xxs={12} xs={2.5} sm={3} md={5} lg={2} xl={3} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
-                                                    <span style={{ color: '#639AE0', fontWeight: '600' }}>RRSO</span>
-                                                    <span>1,21 %</span>
-                                                </Grid>
-                                                <Grid item xxs={12} xs={5} sm={4} md={7} lg={5} xl={4} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
-                                                    <span style={{ color: '#639AE0', fontWeight: '600' }}>Oprocentowanie</span>
-                                                    <span>2,4 %</span>
-                                                </Grid>
-                                            </Grid>
-                                        </HelpBlock>
+                                        <TableContainer component={Paper} sx={{ boxShadow: '0' }}>
+                                            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                                                <TableHead>
+                                                    <TableRow >
+                                                        <TableCell sx={{ borderRight: '1px solid #E4E4E4', color: '#639AE0' }} align="center">Bank</TableCell>
+                                                        <TableCell sx={{ borderRight: '1px solid #E4E4E4', color: '#639AE0' }} align="center">Rata</TableCell>
+                                                        <TableCell sx={{ borderRight: '1px solid #E4E4E4', color: '#639AE0' }} align="center">Prowizja</TableCell>
+                                                        <TableCell sx={{ borderRight: '1px solid #E4E4E4', color: '#639AE0' }} align="center">RRSO</TableCell>
+                                                        <TableCell sx={{ borderRight: '1px solid #E4E4E4', color: '#639AE0' }} align="center">Oprocentowanie</TableCell>
+                                                        <TableCell sx={{ borderRight: '1px solid #E4E4E4', color: '#639AE0' }} align="center">Szansa na kredyt</TableCell>
+                                                        <TableCell align="center"></TableCell>
+                                                    </TableRow>
+                                                </TableHead>
+                                                <TableBody>
 
-                                        <HelpBlock icon={pko} showBorder={true}></HelpBlock>
-                                        <HelpBlock icon={pko} showBorder={true}></HelpBlock>
+                                                    {banks.map((item, index) => (
+                                                        <TableRow key={item.installment + index + Date.now}>
+                                                            <TableCell sx={{ p: '5px', borderLeft: 0, fontFamily: 'Montserrat', borderRight: '1px solid #E4E4E4', borderBottom: '1px solid #E4E4E4' }} align="center">
+                                                                <img alt='icon' style={{ maxHeight: '50px' }} src={item.img} />
+                                                            </TableCell>
+                                                            <TableCell sx={{ p: '5px', fontFamily: 'Montserrat', borderRight: '1px solid #E4E4E4' }} align="center">{item.installment}</TableCell>
+                                                            <TableCell sx={{ p: '5px', fontFamily: 'Montserrat', borderRight: '1px solid #E4E4E4' }} align="center">{item.commission}</TableCell>
+                                                            <TableCell sx={{ p: '5px', fontFamily: 'Montserrat', borderRight: '1px solid #E4E4E4' }} align="center">{item.rrso}</TableCell>
+                                                            <TableCell sx={{ p: '5px', fontFamily: 'Montserrat', borderRight: '1px solid #E4E4E4' }} align="center">{item.interestRate}</TableCell>
+                                                            <TableCell sx={{ p: '5px', fontFamily: 'Montserrat', borderRight: '1px solid #E4E4E4' }} align="center">
+                                                                {bestOffer === +item.loanChance.slice(0, -2) &&
+                                                                    <div style={{ marginBottom: '10px', backgroundColor: '#AB1D1D', color: '#FFFFFF', padding: '5px', width: '100%', textTransform: 'uppercase' }}>Najlepsza oferta</div>
+                                                                }
+                                                                {item.loanChance}
+                                                            </TableCell>
+                                                            <TableCell sx={{ p: '5px', fontFamily: 'Montserrat', borderRight: 0 }} align="center">
+                                                                <Button variant="contained" size='small'
+                                                                    sx={{ fontFamily: 'Montserrat', color: '#FFFFFF', backgroundColor: '#314897', textTransform: 'uppercase' }}>wybierz</Button>
+                                                                <InfoRoundedIcon sx={{ color: '#639AE0', ml: '20px' }} />
+                                                            </TableCell>
+                                                        </TableRow>
+                                                    ))}
+                                                </TableBody>
+                                            </Table>
+                                        </TableContainer>
 
                                         <Button variant="text" size='small'
                                             sx={{ fontFamily: 'Montserrat', color: '#314897', fontWeight: '600' }}>pokaż więcej</Button>

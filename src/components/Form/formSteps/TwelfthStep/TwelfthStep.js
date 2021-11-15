@@ -25,7 +25,7 @@ export const TwelfthStep = () => {
             <Grid container>
                 <Grid item xs={12} md={6}>
                     <div>
-                        <h2 style={{ lineHeight: '1.5' }}>Ile czasu chcesz spłacać kredyt?</h2>
+                        <h2 style={{ lineHeight: '1.5' }}>Jak duży jest dom który chcesz kupić?</h2>
                     </div>
 
                     <div>

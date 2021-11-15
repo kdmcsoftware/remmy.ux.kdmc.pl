@@ -46,56 +46,9 @@ export const FifthStep = () => {
                                     label="Działkę" />
                                 <FormControlLabel className={`radioItem ${value === 'four' && 'radioActive'}`}
                                     value="four" control={<Radio sx={{ '&.Mui-checked': { color: "white" } }} />}
-                                    label="DziLokal użytkowyałkę" />
+                                    label="Lokal użytkowyałkę" />
                             </RadioGroup>
                         </FormControl>
-                        {/* <FormControl fullWidth variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                            <InputLabel id="demo-simple-select-standard-label">label</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-standard-label"
-                                id="demo-simple-select-standard"
-                                value={age}
-                                onChange={handleChange}
-                                label="label"
-                            >
-                                <MenuItem value=""><em>None</em></MenuItem>
-                                <MenuItem value='10'>Ten</MenuItem>
-                                <MenuItem value='20'>Twenty</MenuItem>
-                                <MenuItem value='30'>Thirty</MenuItem>
-                            </Select>
-                        </FormControl>
-
-                        <FormControl fullWidth variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                            <InputLabel id="demo-simple-select-standard-label1">label</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-standard-label1"
-                                id="demo-simple-select-standard1"
-                                value={age}
-                                onChange={handleChange}
-                                label="label"
-                            >
-                                <MenuItem value=""><em>None</em></MenuItem>
-                                <MenuItem value='10'>Ten</MenuItem>
-                                <MenuItem value='20'>Twenty</MenuItem>
-                                <MenuItem value='30'>Thirty</MenuItem>
-                            </Select>
-                        </FormControl>
-
-                        <FormControl fullWidth variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                            <InputLabel id="demo-simple-select-standard-label2">label</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-standard-label2"
-                                id="demo-simple-select-standard2"
-                                value={age}
-                                onChange={handleChange}
-                                label="label"
-                            >
-                                <MenuItem value=""><em>None</em></MenuItem>
-                                <MenuItem value='10'>Ten</MenuItem>
-                                <MenuItem value='20'>Twenty</MenuItem>
-                                <MenuItem value='30'>Thirty</MenuItem>
-                            </Select>
-                        </FormControl> */}
                     </div>
 
                     <MyButton buttonText='DALEJ' />

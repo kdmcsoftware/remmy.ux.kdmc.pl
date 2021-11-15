@@ -22,26 +22,29 @@ import { Header } from "../Header/Header";
 
 export const MainForm = () => {
     return (
-        <Container sx={{ mt: '100px' }}>
+        <div>
             <Header />
-            <StartStep />
-            <FirstStep />
-            <SecondStep />
-            <ThirdStep />
-            <FourthStep />
-            <FifthStep />
-            <SixthStep />
-            <SeventhStep />
-            <EighthStep />
-            <NinthStep />
-            <TenthStep />
-            <EleventhStep />
-            <TwelfthStep />
-            <ThirteenthStep />
-            <FourteenthStep />
-            <FifteenthStep />
-            <SixteenthStep />
-            <SeventeenthStep />
-        </Container>
+            <Container sx={{ mt: '100px' }}>
+                <StartStep />
+                <FirstStep />
+                <SecondStep />
+                <ThirdStep />
+                <FourthStep />
+                <FifthStep />
+                <SixthStep />
+                <SeventhStep />
+                <EighthStep />
+                <NinthStep />
+                <TenthStep />
+                <EleventhStep />
+                <TwelfthStep />
+                <ThirteenthStep />
+                <FourteenthStep />
+                <FifteenthStep />
+                <SixteenthStep />
+                <SeventeenthStep />
+            </Container>
+        </div>
+
     )
 }

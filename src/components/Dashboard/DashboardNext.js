@@ -65,7 +65,7 @@ export const DashboardNext = () => {
     return (
         <ThemeProvider theme={theme}>
             <div className='dashboard'>
-                <Grid container className='h-100'>
+                <Grid container>
                     {/* <Grid item xxs={12} md='auto' xl={2}> */}
                     <Grid item xxs={12} md={0.7} lg={0.5} xl={2}>
                         <div className='h-100'>
@@ -81,7 +81,7 @@ export const DashboardNext = () => {
                                     <Header />
                                 </Grid>
 
-                                <Grid item xs={12} className='mt--15'>
+                                <Grid item xxs={12} className='mt--15'>
                                     <DashboardBlock title='Twoje rozwiązanie'>
                                         <TableContainer component={Paper} sx={{ boxShadow: '0' }}>
                                             <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -145,7 +145,6 @@ export const DashboardNext = () => {
                                                             <span>Wartość nieruchomości</span>
                                                         </Grid>
                                                         <Grid item xxs={4} xs={5} className='d-flex justify-content-end'>
-                                                            {/* <span style={{ color: '#314897' }}>500000.000000000 PLN</span> */}
                                                             <span style={{ wordBreak: 'break-all', color: '#314897' }}>500000.000 <p className='m--0 d-flex justify-content-end'>PLN</p></span>
                                                         </Grid>
                                                     </div>

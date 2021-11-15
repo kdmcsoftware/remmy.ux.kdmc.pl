@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Checkbox, Container, FormControl, FormControlLabel, Radio, RadioGroup, Grid } from "@mui/material";
+import { Container, FormControl, FormControlLabel, Grid, Radio, RadioGroup } from "@mui/material";
 import { MyButton } from "../../../common/MyButton";
 import '../../radioStep.scss'
 
-export const FirstStep = () => {
+export const SeventeenthStep = () => {
 
     const [value, setValue] = useState('one');
 
@@ -16,7 +16,7 @@ export const FirstStep = () => {
             <Grid container>
                 <Grid item xs={12} md={6}>
                     <div>
-                        <h2 style={{ lineHeight: '1.5' }}>Cześć, na jakim etapie zakupu nieruchomości jesteś?</h2>
+                        <h2 style={{ lineHeight: '1.5' }}>Czy posiadasz inne zobowiązania kredytywe?</h2>
                     </div>
 
                     <div>
@@ -30,16 +30,16 @@ export const FirstStep = () => {
                             >
                                 <FormControlLabel className={`radioItem ${value === 'one' && 'radioActive'}`}
                                     value="one" control={<Radio sx={{ '&.Mui-checked': { color: "white" } }} />}
-                                    label="Przeglądam ogłoszenia" />
+                                    label="Karta kredytowa" />
                                 <FormControlLabel className={`radioItem ${value === 'two' && 'radioActive'}`}
                                     value="two" control={<Radio sx={{ '&.Mui-checked': { color: "white" } }} />}
-                                    label="Odwiedzam nieruchomości wystawione na sprzedaż" />
+                                    label="Pożyczka osobista" />
                                 <FormControlLabel className={`radioItem ${value === 'three' && 'radioActive'}`}
                                     value="three" control={<Radio sx={{ '&.Mui-checked': { color: "white" } }} />}
-                                    label="Mam już wybraną nieruchomość" />
+                                    label="Pożyczka biznesowa" />
                                 <FormControlLabel className={`radioItem ${value === 'four' && 'radioActive'}`}
                                     value="four" control={<Radio sx={{ '&.Mui-checked': { color: "white" } }} />}
-                                    label="Mam już ofertę kredytu" />
+                                    label="Leasing samochodu" />
                             </RadioGroup>
                         </FormControl>
                     </div>

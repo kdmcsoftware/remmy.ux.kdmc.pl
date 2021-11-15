@@ -1,7 +1,7 @@
-import React, {useState} from "react";
-import {Container, FormControl, FormControlLabel, Grid, Radio, RadioGroup} from "@mui/material";
-import {MyButton} from "../../../common/MyButton";
-import './secondStep.scss'
+import React, { useState } from "react";
+import { Container, FormControl, FormControlLabel, Grid, Radio, RadioGroup } from "@mui/material";
+import { MyButton } from "../../../common/MyButton";
+import '../../radioStep.scss'
 
 export const SecondStep = () => {
 
@@ -12,11 +12,11 @@ export const SecondStep = () => {
     };
 
     return (
-        <Container className='secondStep' sx={{mb: '50px', minHeight: '500px'}}>
+        <Container className='radioStep' sx={{ mb: '50px', minHeight: '500px' }}>
             <Grid container>
                 <Grid item xs={12} md={6}>
                     <div>
-                        <h2 style={{lineHeight: '1.5'}}>Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod</h2>
+                        <h2 style={{ lineHeight: '1.5' }}>W czym mogę Ci pomóc?</h2>
                     </div>
 
                     <div>
@@ -29,22 +29,19 @@ export const SecondStep = () => {
                                 onChange={handleChange}
                             >
                                 <FormControlLabel className={`radioItem ${value === 'one' && 'radioActive'}`}
-                                                  value="one" control={<Radio sx={{'&.Mui-checked': {color: "white"}}}/>}
-                                                  label="Lorem ipsum dolor sit amet"/>
+                                    value="one" control={<Radio sx={{ '&.Mui-checked': { color: "white" } }} />}
+                                    label="Sprawdź, na jaką nieruchomość mnie stać" />
                                 <FormControlLabel className={`radioItem ${value === 'two' && 'radioActive'}`}
-                                                  value="two" control={<Radio sx={{'&.Mui-checked': {color: "white"}}}/>}
-                                                  label="Lorem ipsum dolor sit amet"/>
+                                    value="two" control={<Radio sx={{ '&.Mui-checked': { color: "white" } }} />}
+                                    label="Oblicz ratę i porównaj oferty banków" />
                                 <FormControlLabel className={`radioItem ${value === 'three' && 'radioActive'}`}
-                                                  value="three" control={<Radio sx={{'&.Mui-checked': {color: "white"}}}/>}
-                                                  label="Lorem ipsum dolor sit amet"/>
-                                <FormControlLabel className={`radioItem ${value === 'four' && 'radioActive'}`}
-                                                  value="four" control={<Radio sx={{'&.Mui-checked': {color: "white"}}}/>}
-                                                  label="Lorem ipsum dolor sit amet"/>
+                                    value="three" control={<Radio sx={{ '&.Mui-checked': { color: "white" } }} />}
+                                    label="Przygotuj wniosek do banków" />
                             </RadioGroup>
                         </FormControl>
                     </div>
 
-                    <MyButton buttonText='DALEJ'/>
+                    <MyButton buttonText='DALEJ' />
                 </Grid>
             </Grid>
         </Container>

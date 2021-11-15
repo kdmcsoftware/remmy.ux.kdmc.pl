@@ -1,25 +1,47 @@
-import React from "react";
-import {Container, Grid, TextField} from "@mui/material";
-import {MyButton} from "../../../common/MyButton";
-import './fourthStep.scss'
+import React, { useState } from "react";
+import { Container, FormControl, FormControlLabel, Grid, Radio, RadioGroup } from "@mui/material";
+import { MyButton } from "../../../common/MyButton";
+import '../../radioStep.scss'
 
 export const FourthStep = () => {
 
+    const [value, setValue] = useState('one');
+
+    const handleChange = (event) => {
+        setValue(event.target.value);
+    };
+
     return (
-        <Container className='fourthStep' sx={{mb: '50px', minHeight: '500px'}}>
+        <Container className='radioStep' sx={{ mb: '50px', minHeight: '500px' }}>
             <Grid container>
                 <Grid item xs={12} md={6}>
                     <div>
-                        <h2 style={{lineHeight: '1.5'}}>Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod</h2>
+                        <h2 style={{ lineHeight: '1.5' }}>Na co chcesz przeznaczyć kredyt?</h2>
                     </div>
 
-                    <div className='textInputs'>
-                        <TextField fullWidth sx={{mt: '10px'}} type='text' label="label" variant="standard" />
-                        <TextField fullWidth sx={{mt: '10px'}} type='text' label="label" variant="standard" />
-                        <TextField fullWidth sx={{mt: '10px'}} type='text' label="label" variant="standard" />
+                    <div>
+                        <FormControl component="fieldset">
+                            <RadioGroup
+                                aria-label="gender"
+                                name="controlled-radio-buttons-group"
+                                defaultValue="one"
+                                value={value}
+                                onChange={handleChange}
+                            >
+                                <FormControlLabel className={`radioItem ${value === 'one' && 'radioActive'}`}
+                                    value="one" control={<Radio sx={{ '&.Mui-checked': { color: "white" } }} />}
+                                    label="Zakup nieruchomości" />
+                                <FormControlLabel className={`radioItem ${value === 'two' && 'radioActive'}`}
+                                    value="two" control={<Radio sx={{ '&.Mui-checked': { color: "white" } }} />}
+                                    label="Budowa nieruchomości" />
+                                <FormControlLabel className={`radioItem ${value === 'three' && 'radioActive'}`}
+                                    value="three" control={<Radio sx={{ '&.Mui-checked': { color: "white" } }} />}
+                                    label="Adaptacja" />
+                            </RadioGroup>
+                        </FormControl>
                     </div>
 
-                    <MyButton buttonText='DALEJ'/>
+                    <MyButton buttonText='DALEJ' />
                 </Grid>
             </Grid>
         </Container>

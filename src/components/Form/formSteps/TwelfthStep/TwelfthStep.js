@@ -8,10 +8,6 @@ export const TwelfthStep = () => {
     const [sliderValue, setSliderValue] = useState(0);
     const [radioValue, setRadioValue] = useState('one');
 
-    useEffect(() => {
-        console.log(sliderValue)
-    }, [sliderValue])
-
     const handleChangeRadio = (event) => {
         setRadioValue(event.target.value);
     };

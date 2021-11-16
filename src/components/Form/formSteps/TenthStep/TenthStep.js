@@ -6,10 +6,6 @@ export const TenthStep = () => {
 
     const [value, setValue] = useState(5);
 
-    useEffect(() => {
-        console.log(value)
-    }, [value])
-
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };

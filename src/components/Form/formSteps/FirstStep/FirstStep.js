@@ -1,7 +1,7 @@
+import { Container, FormControl, FormControlLabel, Grid, Radio, RadioGroup } from "@mui/material";
 import React, { useState } from "react";
-import { Checkbox, Container, FormControl, FormControlLabel, Radio, RadioGroup, Grid } from "@mui/material";
 import { MyButton } from "../../../common/MyButton";
-import '../../radioStep.scss'
+import '../../radioStep.scss';
 
 export const FirstStep = () => {
 
@@ -28,7 +28,7 @@ export const FirstStep = () => {
                                 value={value}
                                 onChange={handleChange}
                             >
-                                <FormControlLabel className={`radioItem ${value === 'one' && 'radioActive'}`}
+                                <FormControlLabel style={{ fontFamily: 'Montserrat' }} className={`radioItem ${value === 'one' && 'radioActive'}`}
                                     value="one" control={<Radio sx={{ '&.Mui-checked': { color: "white" } }} />}
                                     label="Przeglądam ogłoszenia" />
                                 <FormControlLabel className={`radioItem ${value === 'two' && 'radioActive'}`}

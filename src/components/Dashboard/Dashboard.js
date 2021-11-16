@@ -36,13 +36,13 @@ export const Dashboard = () => {
         <ThemeProvider theme={theme}>
             <div className='dashboard'>
                 <Grid container className='h-100'>
-                    <Grid item xxs={12} md={0.7} lg={0.5} xl={2}>
+                    <Grid item xxs={12} md='auto' xl={2}>
                         <div className='h-100'>
                             <DashboardMenu />
                         </div>
                     </Grid>
 
-                    <Grid item xxs={12} md={11.3} lg={11.5} xl={10}>
+                    <Grid item xxs={12} md={true} xl={10}>
                         <div>
                             <Grid container className='d-flex justify-content-center'>
                                 <Grid item xxs={12}>
@@ -59,12 +59,12 @@ export const Dashboard = () => {
                                             >
                                                 <div className='mt--10'>
                                                     <Grid container spacing={1} className='d-flex'>
-                                                        <Grid item xxs={3} sm={2} lg={1.5} xl={2} className='d-flex'>
+                                                        <Grid item xxs={3} sm={2} lg={true} xl={2} className='d-flex'>
                                                             <div className='d-flex align-items-center'>
                                                                 <img alt='home icon' style={{ width: '35px' }} src={homeIcon} />
                                                             </div>
                                                         </Grid>
-                                                        <Grid item xxs={4} sm={2} md={3} lg={2.5} xl={2} className='d-flex'>
+                                                        <Grid item xxs={4} sm={2} md={3} lg={true} xl={2} className='d-flex'>
                                                             <div className='d-flex align-items-center'>
                                                                 <span style={{ wordBreak: 'break-all' }}>700,000 <p className='m--0'>PLN</p></span>
                                                             </div>
@@ -79,12 +79,12 @@ export const Dashboard = () => {
 
                                                 <div className='mt--10'>
                                                     <Grid container spacing={1} className='d-flex'>
-                                                        <Grid item xxs={3} sm={2} lg={1.5} xl={2} className='d-flex'>
+                                                        <Grid item xxs={3} sm={2} lg={true} xl={2} className='d-flex'>
                                                             <div className='d-flex align-items-center'>
                                                                 <img alt='document icon' style={{ height: '35px' }} src={docIcon} />
                                                             </div>
                                                         </Grid>
-                                                        <Grid item xxs={4} sm={2} md={3} lg={2.5} xl={2} className='d-flex'>
+                                                        <Grid item xxs={4} sm={2} md={3} lg={true} xl={2} className='d-flex'>
                                                             <div className='d-flex align-items-center'>
                                                                 <span>12</span>
                                                             </div>
@@ -108,7 +108,7 @@ export const Dashboard = () => {
                                             >
                                                 <div className='mt--10'>
                                                     <Grid container className='d-flex justify-content-center'>
-                                                        <Grid item xs={4} sm={3} md={2.5} lg={4} className='mb--10'>
+                                                        <Grid item xxs={4} sm={3} md='auto' lg={4} className='mb--10'>
                                                             <div className='d-flex align-items-start'>
                                                                 <div className='d-flex flex-column align-items-center'>
                                                                     <img alt='user icon' className='h--60' src={userIcon} />
@@ -124,7 +124,7 @@ export const Dashboard = () => {
 
                                                             </div>
                                                         </Grid>
-                                                        <Grid item xs={8} sm={9} md={9.5} lg={8} className='pe--15'>
+                                                        <Grid item xxs={8} sm={9} md={true} lg={8} className='pe--15'>
                                                             <div>
                                                                 <span style={{ fontWeight: '600', color: '#314897', margin: '0px 0px 10px 0px' }}>Jan Kowaski</span>
                                                             </div>
@@ -139,7 +139,7 @@ export const Dashboard = () => {
                                     </Grid>
                                 </Grid>
 
-                                <Grid item xs={12} md={6} xl={6} xxl={6} className='mt--15'>
+                                <Grid item xxs={12} md={6} xl={6} xxl={6} className='mt--15'>
                                     <DashboardBlock title='Formalności'>
                                         <Grid container className='mt--15'>
                                             <Grid item xxs={12} className='text-center'>
@@ -170,12 +170,17 @@ export const Dashboard = () => {
                                             </Grid>
                                             <Grid item xxs={12}>
                                                 <Grid container className='d-flex justify-content-between align-items-center'>
-                                                    <Grid item xxs={5.5} xs={5}>
-                                                        <Formalnosc title='Wkład własny' />
+                                                    <Grid item xxs={12}>
+                                                        <Grid container spacing={3}>
+                                                            <Grid item xxs={6}>
+                                                                <Formalnosc title='Wkład własny' />
+                                                            </Grid>
+                                                            <Grid item xxs={6}>
+                                                                <Formalnosc title='Księga wieczysta' />
+                                                            </Grid>
+                                                        </Grid>
                                                     </Grid>
-                                                    <Grid item xxs={5.5} xs={5}>
-                                                        <Formalnosc title='Księga wieczysta' />
-                                                    </Grid>
+
                                                     <Grid item xxs={12} className='d-flex justify-content-center align-items-center'>
                                                         <div className='d-flex justify-content-around'
                                                             style={{ width: '60%' }}>
@@ -200,11 +205,11 @@ export const Dashboard = () => {
                                                     <span style={{ color: '#639AE0', fontWeight: '600' }}>Rata</span>
                                                     <span>1024</span>
                                                 </Grid>
-                                                <Grid item xxs={12} xs={2.5} sm={3} md={7} lg={3} xl={3} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
+                                                <Grid item xxs={12} xs={true} sm={3} md={7} lg={3} xl={3} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
                                                     <span style={{ color: '#639AE0', fontWeight: '600' }}>Prowizja</span>
                                                     <span>0 %</span>
                                                 </Grid>
-                                                <Grid item xxs={12} xs={2.5} sm={3} md={5} lg={2} xl={3} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
+                                                <Grid item xxs={12} xs={true} sm={3} md={5} lg={2} xl={3} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
                                                     <span style={{ color: '#639AE0', fontWeight: '600' }}>RRSO</span>
                                                     <span>1,21 %</span>
                                                 </Grid>
@@ -230,7 +235,7 @@ export const Dashboard = () => {
                                         <HelpBlock icon={flaga}>
                                             <span style={{ color: '#639AE0', fontWeight: '600', padding: '0px 5px' }}>Kwalifikujesz się na “Mieszkanie bez wkładu własnego”</span>
                                         </HelpBlock>
-
+                                        <div className='mt--15'></div>
                                         <DashboardBlock title='Sprawdź zdolność kredytową'>
                                             <Grid container spacing={1} className='d-flex align-items-center'>
                                                 <Grid item xxs={12} sm={8}>

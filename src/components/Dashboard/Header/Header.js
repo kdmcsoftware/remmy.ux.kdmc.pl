@@ -18,7 +18,7 @@ export const Header = () => {
                     <span className='headerDescription'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
                 </div>
             </Grid>
-            <Grid item className='mt--5' xxs={12} md={4}>
+            <Grid item className='mt--5' xxs={12} md={4} sx={{ pr: '15px' }}>
                 <div className="progressInHeader">
                     <span className='me--15'>Gotowność do aplikowania</span>
                     <Progress size={70} value={70} />

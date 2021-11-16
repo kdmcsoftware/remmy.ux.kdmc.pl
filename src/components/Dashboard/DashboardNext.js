@@ -1,5 +1,13 @@
-import { Button, createTheme, Grid, ThemeProvider, TableContainer, Table, TableHead, TableRow, TableBody, TableCell, Paper } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
+import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import EditRoundedIcon from '@mui/icons-material/EditRounded';
+import EuroRoundedIcon from '@mui/icons-material/EuroRounded';
+import HomeWorkRoundedIcon from '@mui/icons-material/HomeWorkRounded';
+import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
+import SavingsRoundedIcon from '@mui/icons-material/SavingsRounded';
+import { Button, createTheme, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, ThemeProvider } from "@mui/material";
+import React, { useEffect, useState } from "react";
 import './dashboard.scss';
 import { DashboardBlock } from "./DashboardBlock/DashboardBlock";
 import { DashboardMenu } from "./DashboardMenu/DashboardMenu";
@@ -9,14 +17,6 @@ import bnp from './img/bnp.png';
 import ing from './img/ing.png';
 import mBank from './img/mBank.png';
 import pko from './img/pko.png';
-import HomeWorkRoundedIcon from '@mui/icons-material/HomeWorkRounded';
-import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
-import EuroRoundedIcon from '@mui/icons-material/EuroRounded';
-import SavingsRoundedIcon from '@mui/icons-material/SavingsRounded';
-import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
-import EditRoundedIcon from '@mui/icons-material/EditRounded';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 
 const theme = createTheme({
     breakpoints: {
@@ -38,11 +38,7 @@ export const DashboardNext = () => {
 
     useEffect(() => {
         findBestOffer()
-    }, [])
-
-    useEffect(() => {
-        console.log(bestOffer)
-    }, [])
+    })
 
     const banks = [
         { img: ing, installment: '1135 PLN', commission: '0,1 %', rrso: '1,23 %', interestRate: '2,5 %', loanChance: '70 %' },
@@ -61,20 +57,17 @@ export const DashboardNext = () => {
         setBestOffer(max)
     }
 
-
     return (
         <ThemeProvider theme={theme}>
             <div className='dashboard'>
                 <Grid container>
-                    {/* <Grid item xxs={12} md='auto' xl={2}> */}
-                    <Grid item xxs={12} md={0.7} lg={0.5} xl={2}>
+                    <Grid item xxs={12} md='auto' xl={2}>
                         <div className='h-100'>
                             <DashboardMenu />
                         </div>
                     </Grid>
 
-                    {/* <Grid item xxs={12} md={11} xl={10}> */}
-                    <Grid item xxs={12} md={11.3} lg={11.5} xl={10}>
+                    <Grid item xxs={12} md={true} xl={10}>
                         <div>
                             <Grid container className='d-flex justify-content-center'>
                                 <Grid item xxs={12}>

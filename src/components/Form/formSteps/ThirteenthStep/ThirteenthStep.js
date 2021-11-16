@@ -1,4 +1,4 @@
-import { Container, Grid, TextField, InputAdornment } from "@mui/material";
+import { Container, Grid, TextField } from "@mui/material";
 import React from "react";
 import { MyButton } from "../../../common/MyButton";
 import '../../radioStep.scss';

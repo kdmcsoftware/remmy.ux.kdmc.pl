@@ -1,5 +1,5 @@
 import { Container, FormControl, FormControlLabel, Grid, Radio, RadioGroup, Slider } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { MyButton } from "../../../common/MyButton";
 import '../../radioStep.scss'
 

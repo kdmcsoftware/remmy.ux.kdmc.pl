@@ -1,5 +1,5 @@
 import { Container, Grid, Slider } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { MyButton } from "../../../common/MyButton";
 
 export const NinthStep = () => {

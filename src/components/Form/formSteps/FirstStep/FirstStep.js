@@ -28,7 +28,7 @@ export const FirstStep = () => {
                                 value={value}
                                 onChange={handleChange}
                             >
-                                <FormControlLabel style={{ fontFamily: 'Montserrat' }} className={`radioItem ${value === 'one' && 'radioActive'}`}
+                                <FormControlLabel className={`radioItem ${value === 'one' && 'radioActive'}`}
                                     value="one" control={<Radio sx={{ '&.Mui-checked': { color: "white" } }} />}
                                     label="Przeglądam ogłoszenia" />
                                 <FormControlLabel className={`radioItem ${value === 'two' && 'radioActive'}`}

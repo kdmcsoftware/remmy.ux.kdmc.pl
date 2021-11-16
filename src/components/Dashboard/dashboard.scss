@@ -8,6 +8,16 @@
   .MuiStepIcon-root.Mui-completed {
     color: #314897;
   }
+
+  .tableHeadBorder {
+    border-right: 1px solid #E4E4E4; 
+    color: #639AE0;
+  }
+  
+  .tableBodyBorder {
+    border-right: 1px solid #E4E4E4; 
+    padding: 5px;
+  }
 }
 
 .showTopBorder {

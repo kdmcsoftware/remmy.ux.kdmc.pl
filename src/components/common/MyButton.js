@@ -5,8 +5,11 @@ export const MyButton = ({ buttonText }) => {
     return (
         <div>
             <Button sx={{
-                mt: '40px', color: '#FFFFFF', backgroundColor: '#425DBA', fontFamily: 'Montserrat'
-            }} variant='contained' size='large'>{buttonText}</Button>
+                mt: '40px', color: '#FFFFFF', backgroundColor: '#425DBA',
+            }}
+                variant='contained' size='large'>
+                {buttonText}
+            </Button>
         </div>
     )
 }

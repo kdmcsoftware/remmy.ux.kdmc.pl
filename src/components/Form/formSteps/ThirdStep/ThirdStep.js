@@ -5,16 +5,6 @@ import '../../radioStep.scss'
 
 export const ThirdStep = () => {
 
-    // const [value, setValue] = useState([40, 60]);
-
-    // const handleChange = (event, newValue) => {
-    //     setValue(newValue);
-    // };
-
-    // const valuetext = (value) => {
-    //     // console.log(value)
-    // }
-
     const [value, setValue] = useState('one');
 
     const handleChange = (event) => {
@@ -30,20 +20,6 @@ export const ThirdStep = () => {
                     </div>
 
                     <div>
-                        {/* <Slider
-                            sx={{ mt: '30px' }}
-                            getAriaLabel={() => 'Temperature range'}
-                            size='medium'
-                            color='primary'
-                            marks
-                            step={20}
-                            min={0}
-                            max={100}
-                            value={value}
-                            onChange={handleChange}
-                            valueLabelDisplay="auto"
-                            getAriaValueText={valuetext}
-                        /> */}
                         <FormControl component="fieldset">
                             <RadioGroup
                                 aria-label="gender"

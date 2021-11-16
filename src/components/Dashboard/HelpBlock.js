@@ -18,7 +18,7 @@ export const HelpBlock = ({ icon, buttonName, children, showBorder }) => {
 
                 <Grid item xxs={12} sm={2} className='d-flex justify-content-center align-items-center'>
                     <Button variant="outlined" size='small'
-                        sx={{ fontFamily: 'Montserrat', color: '#314897' }}>{buttonName ? buttonName : 'Więcej'}</Button>
+                        sx={{ color: '#314897' }}>{buttonName ? buttonName : 'Więcej'}</Button>
                 </Grid>
             </Grid>
         </div>

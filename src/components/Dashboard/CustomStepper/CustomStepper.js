@@ -31,9 +31,7 @@ export const CustomStepper = () => {
                 {steps.map((step, index) => (
                     <Step key={step.label}>
                         <StepButton onClick={handleStep(index)}>
-                            <span style={{ fontFamily: 'Montserrat' }}>
-                                {step.label}
-                            </span>
+                            {step.label}
                         </StepButton>
                         <StepContent>
                             {step.description}

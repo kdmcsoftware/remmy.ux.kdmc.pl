@@ -16,7 +16,7 @@ export const HeaderBlock = ({ title, description, buttonName, children }) => {
                 </Grid>
                 <Grid item sm={3} xxl={4}>
                     <Button variant="contained" size='large'
-                        sx={{ fontFamily: 'Montserrat', mt: '20px', color: '#FFFFFF', backgroundColor: '#314897' }}>{buttonName}</Button>
+                        sx={{ mt: '20px', color: '#FFFFFF', backgroundColor: '#314897' }}>{buttonName}</Button>
                 </Grid>
             </Grid>
         </div>

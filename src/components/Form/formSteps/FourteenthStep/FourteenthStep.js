@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Container, FormControl, FormControlLabel, Grid, Radio, RadioGroup } from "@mui/material";
 import { MyButton } from "../../../common/MyButton";
 import '../../radioStep.scss'
+import { StepsContext } from '../../StepsState'
 
 export const FourteenthStep = () => {
 
@@ -11,9 +12,19 @@ export const FourteenthStep = () => {
         setValue(event.target.value);
     };
 
+    const { steps, setSteps, fourteenthStepRef, fifteenthStepRef } = useContext(StepsContext)
+
+    const nextStep = async () => {
+        if (steps.fifteenthStep !== true) {
+            await setSteps((prevState) => ({ ...prevState, fifteenthStep: true }))
+        }
+
+        fifteenthStepRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+
     return (
-        <Container className='radioStep' sx={{ mb: '50px', minHeight: '500px' }}>
-            <Grid container>
+        <Container ref={fourteenthStepRef} className='radioStep' sx={{ minHeight: '100vh' }}>
+            <Grid container sx={{ pt: '100px' }}>
                 <Grid item xs={12} md={6}>
                     <div>
                         <h2 style={{ lineHeight: '1.5' }}>W jakiej formie posiadasz dochody?</h2>
@@ -44,7 +55,7 @@ export const FourteenthStep = () => {
                         </FormControl>
                     </div>
 
-                    <MyButton buttonText='DALEJ' />
+                    <MyButton buttonText='DALEJ' onClick={nextStep} />
                 </Grid>
             </Grid>
         </Container>

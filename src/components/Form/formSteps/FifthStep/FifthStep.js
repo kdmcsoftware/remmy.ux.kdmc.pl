@@ -1,15 +1,10 @@
 import { Container, FormControl, FormControlLabel, Grid, Radio, RadioGroup } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { MyButton } from "../../../common/MyButton";
 import '../../radioStep.scss'
+import { StepsContext } from '../../StepsState'
 
 export const FifthStep = () => {
-
-    // const [age, setAge] = useState('');
-
-    // const handleChange = (event) => {
-    //     setAge(event.target.value);
-    // };
 
     const [value, setValue] = useState('one');
 
@@ -17,16 +12,25 @@ export const FifthStep = () => {
         setValue(event.target.value);
     };
 
+    const { steps, setSteps, fifthStepRef, sixthStepRef } = useContext(StepsContext)
+
+    const nextStep = async () => {
+        if (steps.sixthStep !== true) {
+            await setSteps((prevState) => ({ ...prevState, sixthStep: true }))
+        }
+
+        sixthStepRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+
     return (
-        <Container className='radioStep' sx={{ mb: '50px', minHeight: '500px' }}>
-            <Grid container>
+        <Container ref={fifthStepRef} className='radioStep' sx={{ minHeight: '100vh' }}>
+            <Grid container sx={{ pt: '100px' }}>
                 <Grid item xs={12} md={6}>
                     <div>
                         <h2 style={{ lineHeight: '1.5' }}>Jaką nieruchomość planujesz kupić?</h2>
                     </div>
 
                     <div>
-                        {/* <div className='d-flex flex-column'> */}
                         <FormControl component="fieldset">
                             <RadioGroup
                                 aria-label="gender"
@@ -46,12 +50,12 @@ export const FifthStep = () => {
                                     label="Działkę" />
                                 <FormControlLabel className={`radioItem ${value === 'four' && 'radioActive'}`}
                                     value="four" control={<Radio sx={{ '&.Mui-checked': { color: "white" } }} />}
-                                    label="Lokal użytkowyałkę" />
+                                    label="Lokal użytkowy" />
                             </RadioGroup>
                         </FormControl>
                     </div>
 
-                    <MyButton buttonText='DALEJ' />
+                    <MyButton buttonText='DALEJ' onClick={nextStep} />
                 </Grid>
             </Grid>
         </Container>

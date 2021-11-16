@@ -1,6 +1,7 @@
 import { Container, Grid, Slider } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { MyButton } from "../../../common/MyButton";
+import { StepsContext } from '../../StepsState'
 
 export const NinthStep = () => {
 
@@ -10,13 +11,23 @@ export const NinthStep = () => {
         setValue(newValue);
     };
 
+    const { steps, setSteps, ninthStepRef, tenthStepRef } = useContext(StepsContext)
+
+    const nextStep = async () => {
+        if (steps.tenthStep !== true) {
+            await setSteps((prevState) => ({ ...prevState, tenthStep: true }))
+        }
+
+        tenthStepRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+
     // const valuetext = (value) => {
     //     console.log(value)
     // }
 
     return (
-        <Container sx={{ mb: '50px', minHeight: '500px' }}>
-            <Grid container>
+        <Container ref={ninthStepRef} sx={{ minHeight: '100vh' }}>
+            <Grid container sx={{ pt: '100px' }}>
                 <Grid item xs={12} md={6}>
                     <div>
                         <h2 style={{ lineHeight: '1.5' }}>Ile pieniędzy jesteś w stanie przeznaczyć na depozyt?</h2>
@@ -44,7 +55,7 @@ export const NinthStep = () => {
 
                     </div>
 
-                    <MyButton buttonText='DALEJ' />
+                    <MyButton buttonText='DALEJ' onClick={nextStep} />
                 </Grid>
             </Grid>
         </Container>

@@ -1,13 +1,24 @@
 import { Container, Grid, TextField } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
 import { MyButton } from "../../../common/MyButton";
 import '../../radioStep.scss';
+import { StepsContext } from '../../StepsState'
 
 export const ThirteenthStep = () => {
 
+    const { steps, setSteps, thirteenthStepRef, fourteenthStepRef } = useContext(StepsContext)
+
+    const nextStep = async () => {
+        if (steps.fourteenthStep !== true) {
+            await setSteps((prevState) => ({ ...prevState, fourteenthStep: true }))
+        }
+
+        fourteenthStepRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+
     return (
-        <Container className='radioStep' sx={{ mb: '50px', minHeight: '500px' }}>
-            <Grid container>
+        <Container ref={thirteenthStepRef} className='radioStep' sx={{ minHeight: '100vh' }}>
+            <Grid container sx={{ pt: '100px' }}>
                 <Grid item xs={12} md={6}>
                     <div>
                         <h2 style={{ lineHeight: '1.5' }}>Dane osobiste</h2>
@@ -31,7 +42,7 @@ export const ThirteenthStep = () => {
                         />
                     </div>
 
-                    <MyButton buttonText='DALEJ' />
+                    <MyButton buttonText='DALEJ' onClick={nextStep} />
                 </Grid>
             </Grid>
         </Container>

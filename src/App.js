@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Dashboard } from "./components/Dashboard/Dashboard";
 import { DashboardNext } from "./components/Dashboard/DashboardNext";
 import { MainForm } from "./components/Form/MainForm";
+import { StepsState } from './components/Form/StepsState'
 
 function App() {
 
@@ -28,12 +29,14 @@ function App() {
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <Routes>
-          <Route path='/' element={<MainForm />} />
-          <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/dashboardNext' element={<DashboardNext />} />
-          <Route path='*' element={<MainForm />} />
-        </Routes>
+        <StepsState>
+          <Routes>
+            <Route path='/' element={<MainForm />} />
+            <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/dashboardNext' element={<DashboardNext />} />
+            <Route path='*' element={<MainForm />} />
+          </Routes>
+        </StepsState>
       </ThemeProvider>
     </div>
   );

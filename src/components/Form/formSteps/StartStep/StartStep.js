@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Box, Container, Grid } from "@mui/material";
 import './startStep.scss'
 import { MyButton } from "../../../common/MyButton";
+import { StepsContext } from '../../StepsState'
 
 export const StartStep = () => {
+
+    const { steps, setSteps, firstStepRef } = useContext(StepsContext)
+
+    const nextStep = async () => {
+        if (steps.firstStep !== true) {
+            await setSteps((prevState) => ({ ...prevState, firstStep: true }))
+        }
+
+        firstStepRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+
     return (
-        <Container className='startStep' sx={{ mb: '50px', minHeight: '500px' }}>
-            <Grid container spacing={3}>
+        <Container className='startStep' sx={{ minHeight: '100%' }}>
+            <Grid container spacing={3} sx={{ pt: '30px' }}>
                 <Grid item xs={12} md={6}>
                     <div>
                         <h2 style={{ lineHeight: '1.5' }}>Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod</h2>
@@ -29,7 +41,7 @@ export const StartStep = () => {
                         </ul>
                     </div>
 
-                    <MyButton buttonText='ZACZNIJ' />
+                    <MyButton buttonText='ZACZNIJ' onClick={nextStep} />
                 </Grid>
 
                 <Grid item xs={12} md={3}>

@@ -1,19 +1,21 @@
-import React, { useState } from "react";
 import { Container, FormControl, FormControlLabel, Grid, Radio, RadioGroup } from "@mui/material";
+import React, { useState, useContext } from "react";
 import { MyButton } from "../../../common/MyButton";
-import '../../radioStep.scss'
+import '../../radioStep.scss';
+import { StepsContext } from '../../StepsState'
 
 export const SeventeenthStep = () => {
 
     const [value, setValue] = useState('one');
+    const { seventeenthStepRef } = useContext(StepsContext)
 
     const handleChange = (event) => {
         setValue(event.target.value);
     };
 
     return (
-        <Container className='radioStep' sx={{ mb: '50px', minHeight: '500px' }}>
-            <Grid container>
+        <Container ref={seventeenthStepRef} className='radioStep' sx={{ minHeight: '100vh' }}>
+            <Grid container sx={{ pt: '100px' }}>
                 <Grid item xs={12} md={6}>
                     <div>
                         <h2 style={{ lineHeight: '1.5' }}>Czy posiadasz inne zobowiązania kredytywe?</h2>
@@ -44,7 +46,7 @@ export const SeventeenthStep = () => {
                         </FormControl>
                     </div>
 
-                    <MyButton buttonText='DALEJ' />
+                    <MyButton buttonText='ZAKOŃCZ' />
                 </Grid>
             </Grid>
         </Container>

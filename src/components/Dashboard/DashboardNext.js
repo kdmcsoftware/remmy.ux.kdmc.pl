@@ -27,11 +27,11 @@ export const DashboardNext = () => {
     })
 
     const banks = [
-        { img: ing, installment: '1135 PLN', commission: '0,1 %', rrso: '1,23 %', interestRate: '2,5 %', loanChance: '70 %' },
-        { img: pko, installment: '1024 PLN', commission: '0 %', rrso: '1,21 %', interestRate: '2,4 %', loanChance: '90 %' },
-        { img: bnp, installment: '1135 PLN', commission: '0,1 %', rrso: '1,23 %', interestRate: '2,5 %', loanChance: '70 %' },
-        { img: mBank, installment: '1246 PLN', commission: '0,2 %', rrso: '1,25 %', interestRate: '2,7 %', loanChance: '60 %' },
-        { img: bankPekao, installment: '1246 PLN', commission: '0,2 %', rrso: '1,25 %', interestRate: '2,7 %', loanChance: '60 %' }
+        { img: ing, installment: '1,135.00 PLN', commission: '0.10 %', rrso: '1.23 %', interestRate: '2.50 %', loanChance: '70 %' },
+        { img: pko, installment: '1,024.00 PLN', commission: '0.00 %', rrso: '1.21 %', interestRate: '2.40 %', loanChance: '90 %' },
+        { img: bnp, installment: '1,135.00 PLN', commission: '0.10 %', rrso: '1.23 %', interestRate: '2.50 %', loanChance: '70 %' },
+        { img: mBank, installment: '1,246.00 PLN', commission: '0.20 %', rrso: '1.25 %', interestRate: '2.70 %', loanChance: '60 %' },
+        { img: bankPekao, installment: '1,246.00 PLN', commission: '0.20 %', rrso: '1.25 %', interestRate: '2.70 %', loanChance: '60 %' }
     ]
 
     const findBestOffer = () => {
@@ -123,7 +123,7 @@ export const DashboardNext = () => {
                                                         <span>Wartość nieruchomości</span>
                                                     </Grid>
                                                     <Grid item xxs={4} xs={5} className='d-flex justify-content-end'>
-                                                        <span style={{ wordBreak: 'break-all', color: '#314897' }}>500000.000 <p className='m--0 d-flex justify-content-end'>PLN</p></span>
+                                                        <span style={{ wordBreak: 'break-all', color: '#314897' }}>500,000.00 <p className='m--0 d-flex justify-content-end'>PLN</p></span>
                                                     </Grid>
                                                 </div>
                                                 <div className='d-flex' style={{ padding: '15px 0px' }}>
@@ -145,7 +145,7 @@ export const DashboardNext = () => {
                                                         <span>Twoje zarobki</span>
                                                     </Grid>
                                                     <Grid item xxs={5} className='d-flex justify-content-end'>
-                                                        <span style={{ color: '#314897' }}>8000 PLN</span>
+                                                        <span style={{ color: '#314897' }}>8,000.00 PLN</span>
                                                     </Grid>
                                                 </div>
                                                 <div className='d-flex' style={{ padding: '15px 0px' }}>
@@ -156,7 +156,7 @@ export const DashboardNext = () => {
                                                         <span>Wkład własny</span>
                                                     </Grid>
                                                     <Grid item xxs={5} className='d-flex justify-content-end'>
-                                                        <span style={{ color: '#314897' }}>50000 PLN</span>
+                                                        <span style={{ color: '#314897' }}>50,000.00 PLN</span>
                                                     </Grid>
                                                 </div>
 
@@ -190,7 +190,7 @@ export const DashboardNext = () => {
                                                 </div>
                                                 <div style={{ padding: '0px 0px' }}>
                                                     <Grid item xxs={12} >
-                                                        <span style={{ color: '#989898' }}>59,21 PLN</span>
+                                                        <span style={{ color: '#989898' }}>59.21 PLN</span>
                                                     </Grid>
                                                 </div>
                                             </Grid>
@@ -205,7 +205,7 @@ export const DashboardNext = () => {
                                             <span style={{ fontSize: '18px', color: '#639AE0', fontWeight: '500' }}>Początkowe koszty</span>
                                         </Grid>
                                         <Grid item xxs={12} xl={5} className='text-center'>
-                                            <span style={{ fontSize: '18px', color: '#314897', fontWeight: '600' }}>3458,00 PLN</span>
+                                            <span style={{ fontSize: '18px', color: '#314897', fontWeight: '600' }}>3,458.00 PLN</span>
                                         </Grid>
                                     </Grid>
                                     <Grid container spacing={1} className='d-flex justify-content-center' sx={{ pt: '15px' }}>
@@ -213,7 +213,7 @@ export const DashboardNext = () => {
                                             <span style={{ fontSize: '18px', color: '#639AE0', fontWeight: '500' }}>Miesięczne koszty</span>
                                         </Grid>
                                         <Grid item xxs={12} xl={5} className='text-center'>
-                                            <span style={{ fontSize: '18px', color: '#314897', fontWeight: '600' }}>1258,00 PLN</span>
+                                            <span style={{ fontSize: '18px', color: '#314897', fontWeight: '600' }}>1,258.00 PLN</span>
                                         </Grid>
                                     </Grid>
                                 </DashboardBlock>

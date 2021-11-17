@@ -1,4 +1,4 @@
-import { Container, FormControl, FormControlLabel, Grid, Radio, RadioGroup, Slider } from "@mui/material";
+import { Container, FormControl, FormControlLabel, Grid, Radio, RadioGroup, Slider, TextField } from "@mui/material";
 import React, { useState, useContext } from "react";
 import { MyButton } from "../../../common/MyButton";
 import '../../radioStep.scss'
@@ -53,17 +53,32 @@ export const TwelfthStep = () => {
                             </RadioGroup>
                         </FormControl>
 
-                        <Slider
-                            sx={{ mt: '40px' }}
-                            size='medium'
-                            color='primary'
-                            value={sliderValue}
-                            onChange={handleChangeSlider}
-                            valueLabelDisplay="on"
-                            step={5}
-                            min={0}
-                            max={100}
-                        />
+                        {radioValue === 'one' && <TextField
+                            fullWidth
+                            label="Powierzchnia (m^2)"
+                            type='number'
+                            sx={{ mt: '10px' }}
+                            variant="standard"
+                        />}
+
+                        {radioValue === 'two' && <div>
+                            <Slider
+                                sx={{ mt: '55px' }}
+                                size='medium'
+                                color='primary'
+                                value={sliderValue}
+                                onChange={handleChangeSlider}
+                                valueLabelDisplay="on"
+                                step={1}
+                                min={0}
+                                max={100}
+                            />
+
+                            <div className='d-flex justify-content-between'>
+                                <span>1</span>
+                                <span>100</span>
+                            </div>
+                        </div>}
                     </div>
 
                     <MyButton buttonText='DALEJ' onClick={nextStep} />

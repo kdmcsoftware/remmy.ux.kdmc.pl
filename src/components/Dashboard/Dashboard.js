@@ -136,7 +136,7 @@ export const Dashboard = () => {
                                             </div>
                                         </Grid>
                                         <Grid item xxs={12} className='text-center'>
-                                            <Formalnosc title='Umowa kredytowa' />
+                                            <Formalnosc title='Umowa kredytowa' helpText='Lorem ipsum dolor sit amet, consectetur adipiscing elit' />
                                             <div className='d-flex justify-content-center'>
                                                 <div className='d-flex'>
                                                     <img alt='arrow' src={line} />
@@ -144,7 +144,7 @@ export const Dashboard = () => {
                                             </div>
                                         </Grid>
                                         <Grid item xxs={12} className='text-center'>
-                                            <Formalnosc title='Ubezpieczenie' />
+                                            <Formalnosc title='Ubezpieczenie' helpText='Lorem ipsum dolor sit amet, consectetur adipiscing elit' />
                                             <div className='d-flex justify-content-center'>
                                                 <div className='d-flex justify-content-around'
                                                     style={{ width: '60%' }}>
@@ -158,10 +158,10 @@ export const Dashboard = () => {
                                                 <Grid item xxs={12}>
                                                     <Grid container spacing={3}>
                                                         <Grid item xxs={6}>
-                                                            <Formalnosc title='Wkład własny' />
+                                                            <Formalnosc title='Wkład własny' helpText='Lorem ipsum dolor sit amet, consectetur adipiscing elit' />
                                                         </Grid>
                                                         <Grid item xxs={6}>
-                                                            <Formalnosc title='Księga wieczysta' />
+                                                            <Formalnosc title='Księga wieczysta' helpText='Lorem ipsum dolor sit amet, consectetur adipiscing elit' />
                                                         </Grid>
                                                     </Grid>
                                                 </Grid>
@@ -176,7 +176,7 @@ export const Dashboard = () => {
                                             </Grid>
                                         </Grid>
                                         <Grid item xxs={12} className='text-center'>
-                                            <Formalnosc title='Formalności po uzyskaniu hipoteki' />
+                                            <Formalnosc title='Formalności po uzyskaniu hipoteki' helpText='Lorem ipsum dolor sit amet, consectetur adipiscing elit' />
                                         </Grid>
                                     </Grid>
                                 </DashboardBlock>
@@ -188,19 +188,19 @@ export const Dashboard = () => {
                                         <Grid container spacing={1} className='d-flex'>
                                             <Grid item xxs={12} xs={2} sm={2} md={5} lg={2} xl={2} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
                                                 <span style={{ color: '#639AE0', fontWeight: '600' }}>Rata</span>
-                                                <span>1024</span>
+                                                <span>1,024.00</span>
                                             </Grid>
                                             <Grid item xxs={12} xs={true} sm={3} md={7} lg={3} xl={3} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
                                                 <span style={{ color: '#639AE0', fontWeight: '600' }}>Prowizja</span>
-                                                <span>0 %</span>
+                                                <span>0.00 %</span>
                                             </Grid>
                                             <Grid item xxs={12} xs={true} sm={3} md={5} lg={2} xl={3} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
                                                 <span style={{ color: '#639AE0', fontWeight: '600' }}>RRSO</span>
-                                                <span>1,21 %</span>
+                                                <span>1.21 %</span>
                                             </Grid>
                                             <Grid item xxs={12} xs={5} sm={4} md={7} lg={5} xl={4} xxl={3} className='d-flex flex-column justify-content-center align-items-center text-center'>
                                                 <span style={{ color: '#639AE0', fontWeight: '600' }}>Oprocentowanie</span>
-                                                <span>2,4 %</span>
+                                                <span>2.40 %</span>
                                             </Grid>
                                         </Grid>
                                     </HelpBlock>
@@ -210,10 +210,10 @@ export const Dashboard = () => {
                                                 <span style={{ color: '#639AE0', fontWeight: '600' }}>Ubezpieczenie wkładu własnego</span>
                                             </Grid>
                                             <Grid item xxs={12} sm={6} className='d-flex flex-column justify-content-center align-items-center text-center'>
-                                                <span>50,24 PLN miesięcznie</span>
+                                                <span>50.24 PLN miesięcznie</span>
                                             </Grid>
                                             <Grid item xxs={12} sm={6} className='d-flex flex-column justify-content-center align-items-center text-center'>
-                                                <span>20,000 PLN suma ubezpieczenia</span>
+                                                <span>20,000.00 PLN suma ubezpieczenia</span>
                                             </Grid>
                                         </Grid>
                                     </HelpBlock>

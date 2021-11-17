@@ -27,7 +27,15 @@ export const EleventhStep = () => {
                     <div>
                         <TextField
                             fullWidth
-                            label="Adres"
+                            label="Kod pocztowy"
+                            type='text'
+                            sx={{ mt: '10px' }}
+                            variant="standard"
+                        />
+
+                        <TextField
+                            fullWidth
+                            label="Miasto"
                             type='text'
                             sx={{ mt: '10px' }}
                             variant="standard"

@@ -24,7 +24,7 @@ export const StartStep = () => {
                         <h2 style={{ lineHeight: '1.5' }}>Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod</h2>
                     </div>
 
-                    <Box sx={{ display: { xs: 'block !important', md: 'none !important' } }} component="div"
+                    <Box sx={{ display: { xxs: 'block !important', md: 'none !important' } }} component="div"
                         className='helpInfo'>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua.</p>
@@ -45,7 +45,7 @@ export const StartStep = () => {
                 </Grid>
 
                 <Grid item xs={12} md={3}>
-                    <Box sx={{ display: { xs: 'none !important', md: 'block !important' } }} component="div"
+                    <Box sx={{ display: { xxs: 'none !important', md: 'block !important' } }} component="div"
                         className='helpInfo'>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua.</p></Box>

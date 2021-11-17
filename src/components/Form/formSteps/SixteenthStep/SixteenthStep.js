@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Container, FormControl, FormControlLabel, Grid, Radio, RadioGroup } from "@mui/material";
 import { MyButton } from "../../../common/MyButton";
 import '../../radioStep.scss'
@@ -7,19 +7,28 @@ import { StepsContext } from '../../StepsState'
 export const SixteenthStep = () => {
 
     const [value, setValue] = useState('one');
+    const { steps, setSteps, sixteenthStepRef, seventeenthStepRef } = useContext(StepsContext)
+
+    useEffect(() => {
+        if (value === 'two') {
+            if (steps.seventeenthStep === true) {
+                setSteps((prevState) => ({ ...prevState, seventeenthStep: false }))
+            }
+        }
+    }, [value])
 
     const handleChange = (event) => {
         setValue(event.target.value);
     };
 
-    const { steps, setSteps, sixteenthStepRef, seventeenthStepRef } = useContext(StepsContext)
-
     const nextStep = async () => {
-        if (steps.seventeenthStep !== true) {
-            await setSteps((prevState) => ({ ...prevState, seventeenthStep: true }))
-        }
+        if (value === 'one') {
+            if (steps.seventeenthStep !== true) {
+                await setSteps((prevState) => ({ ...prevState, seventeenthStep: true }))
+            }
 
-        seventeenthStepRef.current.scrollIntoView({ behavior: 'smooth' });
+            seventeenthStepRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 
     return (
@@ -49,7 +58,7 @@ export const SixteenthStep = () => {
                         </FormControl>
                     </div>
 
-                    <MyButton buttonText='DALEJ' onClick={nextStep} />
+                    {value === 'one' ? <MyButton buttonText='DALEJ' onClick={nextStep} /> : <MyButton buttonText='ZAKOŃCZ' onClick={nextStep} />}
                 </Grid>
             </Grid>
         </Container>

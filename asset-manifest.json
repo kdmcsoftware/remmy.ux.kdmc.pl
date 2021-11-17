@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/remmy.ux.kdmc.pl/static/css/main.9364e719.chunk.css",
-    "main.js": "/remmy.ux.kdmc.pl/static/js/main.16bb2a51.chunk.js",
-    "main.js.map": "/remmy.ux.kdmc.pl/static/js/main.16bb2a51.chunk.js.map",
+    "main.js": "/remmy.ux.kdmc.pl/static/js/main.f696a1eb.chunk.js",
+    "main.js.map": "/remmy.ux.kdmc.pl/static/js/main.f696a1eb.chunk.js.map",
     "runtime-main.js": "/remmy.ux.kdmc.pl/static/js/runtime-main.946f90fd.js",
     "runtime-main.js.map": "/remmy.ux.kdmc.pl/static/js/runtime-main.946f90fd.js.map",
     "static/js/2.d6d89e6b.chunk.js": "/remmy.ux.kdmc.pl/static/js/2.d6d89e6b.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.946f90fd.js",
     "static/js/2.d6d89e6b.chunk.js",
     "static/css/main.9364e719.chunk.css",
-    "static/js/main.16bb2a51.chunk.js"
+    "static/js/main.f696a1eb.chunk.js"
   ]
 }

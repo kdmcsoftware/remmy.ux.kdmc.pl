@@ -55,30 +55,19 @@ export const TwelfthStep = () => {
 
                         {radioValue === 'one' && <TextField
                             fullWidth
-                            label="Powierzchnia (m^2)"
+                            label="Powierzchnia (m2)"
                             type='number'
                             sx={{ mt: '10px' }}
                             variant="standard"
                         />}
 
-                        {radioValue === 'two' && <div>
-                            <Slider
-                                sx={{ mt: '55px' }}
-                                size='medium'
-                                color='primary'
-                                value={sliderValue}
-                                onChange={handleChangeSlider}
-                                valueLabelDisplay="on"
-                                step={1}
-                                min={0}
-                                max={100}
-                            />
-
-                            <div className='d-flex justify-content-between'>
-                                <span>1</span>
-                                <span>100</span>
-                            </div>
-                        </div>}
+                        {radioValue === 'two' && <TextField
+                            fullWidth
+                            label="Liczba pokoi"
+                            type='number'
+                            sx={{ mt: '10px' }}
+                            variant="standard"
+                        />}
                     </div>
 
                     <MyButton buttonText='DALEJ' onClick={nextStep} />

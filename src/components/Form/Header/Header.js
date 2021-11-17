@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export const Header = () => {
     return (
-        <AppBar position={'sticky'} sx={{ backgroundColor: '#F9F9F9', minWidth: '100vh' }}>
+        <AppBar position={'fixed'} sx={{ backgroundColor: '#F9F9F9' }}>
             <Toolbar className='d-flex justify-content-between'>
                 <img alt='logo' src={logo} />
                 <div>

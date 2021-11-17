@@ -19,7 +19,7 @@ export const EleventhStep = () => {
     return (
         <Container ref={eleventhStepRef} className='radioStep' sx={{ minHeight: '100vh' }}>
             <Grid container sx={{ pt: '100px' }}>
-                <Grid item xs={12} md={6}>
+                <Grid item xxs={12} md={6}>
                     <div>
                         <h2 style={{ lineHeight: '1.5' }}>Podaj adres domu który chcesz kupić</h2>
                     </div>
@@ -27,7 +27,7 @@ export const EleventhStep = () => {
                     <div>
                         <TextField
                             fullWidth
-                            label="Kod pocztowy"
+                            label="Adres 1"
                             type='text'
                             sx={{ mt: '10px' }}
                             variant="standard"
@@ -35,16 +35,37 @@ export const EleventhStep = () => {
 
                         <TextField
                             fullWidth
-                            label="Miasto"
+                            label="Adres 2"
                             type='text'
                             sx={{ mt: '10px' }}
                             variant="standard"
                         />
+
+                        <Grid container className='d-flex justify-content-between'>
+                            <Grid item xxs={12} xs={4}>
+                                <TextField
+                                    fullWidth
+                                    label="Kod pocztowy"
+                                    type='text'
+                                    sx={{ mt: '10px' }}
+                                    variant="standard"
+                                />
+                            </Grid>
+                            <Grid item xxs={12} xs={7}>
+                                <TextField
+                                    fullWidth
+                                    label="Miasto"
+                                    type='text'
+                                    sx={{ mt: '10px' }}
+                                    variant="standard"
+                                />
+                            </Grid>
+                        </Grid>
                     </div>
 
                     <MyButton buttonText='DALEJ' onClick={nextStep} />
                 </Grid>
             </Grid>
-        </Container>
+        </Container >
     )
 }

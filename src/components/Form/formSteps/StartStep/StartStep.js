@@ -17,8 +17,8 @@ export const StartStep = () => {
     }
 
     return (
-        <Container className='startStep' sx={{ minHeight: '100%' }}>
-            <Grid container spacing={3} sx={{ pt: '30px' }}>
+        <Container className='startStep' sx={{ minHeight: '100vh' }}>
+            <Grid container spacing={3} sx={{ pt: '100px' }}>
                 <Grid item xs={12} md={6}>
                     <div>
                         <h2 style={{ lineHeight: '1.5' }}>Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod</h2>

@@ -5,7 +5,7 @@ import { StepsContext } from '../../StepsState'
 
 export const TenthStep = () => {
 
-    const [value, setValue] = useState(5);
+    const [value, setValue] = useState(1);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -42,14 +42,14 @@ export const TenthStep = () => {
                             value={value}
                             onChange={handleChange}
                             valueLabelDisplay="on"
-                            step={5}
-                            min={5}
+                            step={1}
+                            min={1}
                             max={35}
                         // getAriaValueText={valuetext}
                         />
 
                         <div className='d-flex justify-content-between'>
-                            <span>5</span>
+                            <span>1</span>
                             <span>35</span>
                         </div>
 

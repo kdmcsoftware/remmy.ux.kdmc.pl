@@ -15,13 +15,15 @@ import bnp from './img/bnp.png';
 import ing from './img/ing.png';
 import mBank from './img/mBank.png';
 import pko from './img/pko.png';
+import ArrowDropDownCircleRoundedIcon from '@mui/icons-material/ArrowDropDownCircleRounded';
 
 export const DashboardNext = () => {
 
     const [bestOffer, setBestOffer] = useState(0)
-    const [checked1, setChecked1] = React.useState(true)
-    const [checked2, setChecked2] = React.useState(true)
-    const [checked3, setChecked3] = React.useState(false)
+    const [checked1, setChecked1] = useState(true)
+    const [checked2, setChecked2] = useState(true)
+    const [checked3, setChecked3] = useState(false)
+    const [showTable, setShowTable] = useState(true)
 
     useEffect(() => {
         findBestOffer()
@@ -30,6 +32,14 @@ export const DashboardNext = () => {
     const handleChange1 = (event) => { setChecked1(event.target.checked) }
     const handleChange2 = (event) => { setChecked2(event.target.checked) }
     const handleChange3 = (event) => { setChecked3(event.target.checked) }
+
+    const showTableToggle = () => {
+        if (showTable === true) {
+            setShowTable(false)
+        } else {
+            setShowTable(true)
+        }
+    }
 
     const banks = [
         { img: ing, installment: '1,135.00 PLN', commission: '0.10 %', rrso: '1.23 %', interestRate: '2.50 %', loanChance: '70 %' },
@@ -66,49 +76,57 @@ export const DashboardNext = () => {
 
                             <Grid item xxs={12} className='mt--15'>
                                 <DashboardBlock title='Twoje rozwiązanie'>
-                                    <TableContainer component={Paper} sx={{ boxShadow: '0' }}>
-                                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                                            <TableHead>
-                                                <TableRow >
-                                                    <TableCell className='tableHeadBorder' align="center">Bank</TableCell>
-                                                    <TableCell className='tableHeadBorder' align="center">Rata</TableCell>
-                                                    <TableCell className='tableHeadBorder' align="center">Prowizja</TableCell>
-                                                    <TableCell className='tableHeadBorder' align="center">RRSO</TableCell>
-                                                    <TableCell className='tableHeadBorder' align="center">Oprocentowanie</TableCell>
-                                                    <TableCell className='tableHeadBorder' align="center">Szansa na kredyt</TableCell>
-                                                    <TableCell align="center"></TableCell>
-                                                </TableRow>
-                                            </TableHead>
-                                            <TableBody>
-
-                                                {banks.map((item, index) => (
-                                                    <TableRow key={item.installment + index + Date.now}>
-                                                        <TableCell sx={{ p: '5px', borderLeft: 0, borderRight: '1px solid #E4E4E4', borderBottom: '1px solid #E4E4E4' }} align="center">
-                                                            <img alt='icon' style={{ maxHeight: '50px' }} src={item.img} />
-                                                        </TableCell>
-                                                        <TableCell className='tableBodyBorder' align="center">{item.installment}</TableCell>
-                                                        <TableCell className='tableBodyBorder' align="center">{item.commission}</TableCell>
-                                                        <TableCell className='tableBodyBorder' align="center">{item.rrso}</TableCell>
-                                                        <TableCell className='tableBodyBorder' align="center">{item.interestRate}</TableCell>
-                                                        <TableCell className='tableBodyBorder' align="center">
-                                                            {bestOffer === +item.loanChance.slice(0, -2) &&
-                                                                <div style={{ marginBottom: '10px', backgroundColor: '#AB1D1D', color: '#FFFFFF', padding: '5px', width: '100%', textTransform: 'uppercase' }}>Najlepsza oferta</div>
-                                                            }
-                                                            {item.loanChance}
-                                                        </TableCell>
-                                                        <TableCell sx={{ p: '5px', borderRight: 0 }} align="center">
-                                                            <Button variant="contained" size='small'
-                                                                sx={{ color: '#FFFFFF', backgroundColor: '#314897', textTransform: 'uppercase' }}>wybierz</Button>
-                                                            <InfoRoundedIcon sx={{ color: '#639AE0', ml: '20px' }} />
-                                                        </TableCell>
+                                    <ArrowDropDownCircleRoundedIcon onClick={showTableToggle} fontSize='large' sx={{ color: '#639AE0', position: 'absolute', top: '0', right: '10px' }} />
+                                    <div style={{ display: `${showTable ? 'block' : 'none'}` }}>
+                                        <TableContainer component={Paper} sx={{ boxShadow: '0' }}>
+                                            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                                                <TableHead>
+                                                    <TableRow >
+                                                        <TableCell className='tableHeadBorder' align="center">Bank</TableCell>
+                                                        <TableCell className='tableHeadBorder' align="center">Rata</TableCell>
+                                                        <TableCell className='tableHeadBorder' align="center">Prowizja</TableCell>
+                                                        <TableCell className='tableHeadBorder' align="center">RRSO</TableCell>
+                                                        <TableCell className='tableHeadBorder' align="center">Oprocentowanie</TableCell>
+                                                        <TableCell className='tableHeadBorder' align="center">Szansa na kredyt</TableCell>
+                                                        <TableCell align="center"></TableCell>
                                                     </TableRow>
-                                                ))}
-                                            </TableBody>
-                                        </Table>
-                                    </TableContainer>
+                                                </TableHead>
+                                                <TableBody>
 
-                                    <Button variant="text" size='small'
-                                        sx={{ color: '#314897', fontWeight: '600' }}>pokaż więcej</Button>
+                                                    {banks.map((item, index) => (
+                                                        <TableRow key={item.installment + index + Date.now}>
+                                                            <TableCell sx={{ p: '5px', borderLeft: 0, borderRight: '1px solid #E4E4E4', borderBottom: '1px solid #E4E4E4' }} align="center">
+                                                                <img alt='icon' style={{ maxHeight: '50px' }} src={item.img} />
+                                                            </TableCell>
+                                                            <TableCell className='tableBodyBorder' align="center">{item.installment}</TableCell>
+                                                            <TableCell className='tableBodyBorder' align="center">{item.commission}</TableCell>
+                                                            <TableCell className='tableBodyBorder' align="center">{item.rrso}</TableCell>
+                                                            <TableCell className='tableBodyBorder' align="center">{item.interestRate}</TableCell>
+                                                            <TableCell className='tableBodyBorder' align="center">
+                                                                {bestOffer === +item.loanChance.slice(0, -2) &&
+                                                                    <div style={{ marginBottom: '10px', backgroundColor: '#AB1D1D', color: '#FFFFFF', padding: '5px', width: '100%', textTransform: 'uppercase' }}>Najlepsza oferta</div>
+                                                                }
+                                                                {item.loanChance}
+                                                            </TableCell>
+                                                            <TableCell sx={{ p: '5px', borderRight: 0 }} align="center">
+                                                                <Button variant="contained" size='small'
+                                                                    sx={{ color: '#FFFFFF', backgroundColor: '#314897', textTransform: 'uppercase' }}>wybierz</Button>
+                                                                <InfoRoundedIcon sx={{ color: '#639AE0', ml: '20px' }} />
+                                                            </TableCell>
+                                                        </TableRow>
+                                                    ))}
+                                                </TableBody>
+                                            </Table>
+                                        </TableContainer>
+
+                                        <div className='d-flex justify-content-center pt--5'>
+                                            <Button variant="text" size='small'
+                                                sx={{ color: '#314897', fontWeight: '600' }}
+                                            >
+                                                pokaż więcej
+                                            </Button>
+                                        </div>
+                                    </div>
                                 </DashboardBlock>
                             </Grid>
 

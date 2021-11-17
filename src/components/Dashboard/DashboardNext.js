@@ -1,12 +1,10 @@
 import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
-import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import EuroRoundedIcon from '@mui/icons-material/EuroRounded';
 import HomeWorkRoundedIcon from '@mui/icons-material/HomeWorkRounded';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import SavingsRoundedIcon from '@mui/icons-material/SavingsRounded';
-import { Button, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { Button, Checkbox, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import './dashboard.scss';
 import { DashboardBlock } from "./DashboardBlock/DashboardBlock";
@@ -21,10 +19,17 @@ import pko from './img/pko.png';
 export const DashboardNext = () => {
 
     const [bestOffer, setBestOffer] = useState(0)
+    const [checked1, setChecked1] = React.useState(true)
+    const [checked2, setChecked2] = React.useState(true)
+    const [checked3, setChecked3] = React.useState(false)
 
     useEffect(() => {
         findBestOffer()
     })
+
+    const handleChange1 = (event) => { setChecked1(event.target.checked) }
+    const handleChange2 = (event) => { setChecked2(event.target.checked) }
+    const handleChange3 = (event) => { setChecked3(event.target.checked) }
 
     const banks = [
         { img: ing, installment: '1,135.00 PLN', commission: '0.10 %', rrso: '1.23 %', interestRate: '2.50 %', loanChance: '70 %' },
@@ -164,28 +169,58 @@ export const DashboardNext = () => {
 
                                             <Grid item xxs={12} lg={6} className='showTopBorder' sx={{ p: '0px 0px 0px 20px' }}>
                                                 <div className='showLeftBorder'></div>
-                                                <div className='d-flex' style={{ padding: '15px 0px' }}>
+                                                <div className='d-flex align-items-center' style={{ padding: '15px 0px' }}>
                                                     <Grid item xxs={11} sx={{ pr: '10px' }}>
                                                         <span>Kwalifikujesz się na “Mieszkanie bez wkładu własnego”</span>
                                                     </Grid>
-                                                    <Grid item xxs={1} className='d-flex justify-content-end'>
-                                                        <CheckRoundedIcon sx={{ color: '#314897' }} />
+                                                    <Grid item xxs={1}>
+                                                        <Checkbox
+                                                            sx={{
+                                                                color: '#989898',
+                                                                '&.Mui-checked': {
+                                                                    color: '#314897',
+                                                                },
+                                                            }}
+                                                            checked={checked1}
+                                                            onChange={handleChange1}
+                                                            inputProps={{ 'aria-label': 'one' }}
+                                                        />
                                                     </Grid>
                                                 </div>
-                                                <div className='d-flex' style={{ padding: '15px 0px' }}>
+                                                <div className='d-flex align-items-center' style={{ padding: '15px 0px' }}>
                                                     <Grid item xxs={11} sx={{ pr: '10px' }}>
                                                         <span>Kwalifikacja na fundusz gwarancyjny</span>
                                                     </Grid>
-                                                    <Grid item xxs={1} className='d-flex justify-content-end'>
-                                                        <CheckRoundedIcon sx={{ color: '#314897' }} />
+                                                    <Grid item xxs={1}>
+                                                        <Checkbox
+                                                            sx={{
+                                                                color: '#989898',
+                                                                '&.Mui-checked': {
+                                                                    color: '#314897',
+                                                                },
+                                                            }}
+                                                            checked={checked2}
+                                                            onChange={handleChange2}
+                                                            inputProps={{ 'aria-label': 'two' }}
+                                                        />
                                                     </Grid>
                                                 </div>
-                                                <div className='d-flex' style={{ padding: '15px 0px 0px 0px' }}>
+                                                <div className='d-flex align-items-center' style={{ padding: '15px 0px 0px 0px' }}>
                                                     <Grid item xxs={11} sx={{ pr: '10px' }}>
                                                         <span>Ubezpieczenie wkładu własnego: </span>
                                                     </Grid>
-                                                    <Grid item xxs={1} className='d-flex justify-content-end'>
-                                                        <CloseRoundedIcon sx={{ color: '#989898' }} />
+                                                    <Grid item xxs={1}>
+                                                        <Checkbox
+                                                            sx={{
+                                                                color: '#989898',
+                                                                '&.Mui-checked': {
+                                                                    color: '#314897',
+                                                                },
+                                                            }}
+                                                            checked={checked3}
+                                                            onChange={handleChange3}
+                                                            inputProps={{ 'aria-label': 'three' }}
+                                                        />
                                                     </Grid>
                                                 </div>
                                                 <div style={{ padding: '0px 0px' }}>

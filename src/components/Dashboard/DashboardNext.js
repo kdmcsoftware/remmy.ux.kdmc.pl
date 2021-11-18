@@ -15,6 +15,8 @@ import bnp from './img/bnp.png';
 import ing from './img/ing.png';
 import mBank from './img/mBank.png';
 import pko from './img/pko.png';
+import swipeLeft2 from './img/swipeLeft2.png';
+import swipeLeft1 from './img/swipeLeft1.png';
 import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
@@ -22,6 +24,7 @@ import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 export const DashboardNext = () => {
 
     const [bestOffer, setBestOffer] = useState(0)
+    const [swipeLeftBlock, setSwipeLeftBlock] = useState(true)
     // const [checked1, setChecked1] = useState(true)
     // const [checked2, setChecked2] = useState(true)
     // const [checked3, setChecked3] = useState(false)
@@ -29,6 +32,10 @@ export const DashboardNext = () => {
     useEffect(() => {
         findBestOffer()
     })
+
+    const showSwipeLeftBlock = () => {
+        setSwipeLeftBlock(false)
+    }
 
     // const handleChange1 = (event) => { setChecked1(event.target.checked) }
     // const handleChange2 = (event) => { setChecked2(event.target.checked) }
@@ -69,53 +76,54 @@ export const DashboardNext = () => {
 
                             <Grid item xxs={12} className='mt--15'>
                                 <DashboardBlock title='Produkty dla ciebie'>
-                                    <div className='d-flex justify-content-center'>
-                                        <div className=' mb--20 d-flex d-md-none justify-content-center align-items-center'
-                                            style={{ backgroundColor: '#E5E5E5', width: '60%' }}>
-                                            <span style={{ textTransform: 'uppercase' }}>przewiń &nbsp;</span>
-                                            <ArrowForwardRoundedIcon />
+                                    <div style={{ position: 'relative' }}>
+                                        <div onClick={showSwipeLeftBlock} className={`${swipeLeftBlock ? 'swipeLeftBlock' : 'swipeLeftBlockNone'}`}>
+                                            <div className='swipeLeftItem'>
+                                                <img alt='swipeLeft' src={swipeLeft2} />
+                                            </div>
+                                            <span>Click to close</span>
                                         </div>
-                                    </div>
-                                    <TableContainer component={Paper} sx={{ boxShadow: '0' }}>
-                                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                                            <TableHead>
-                                                <TableRow >
-                                                    <TableCell className='tableHeadBorder' align="center">Bank</TableCell>
-                                                    <TableCell className='tableHeadBorder' align="center">Rata</TableCell>
-                                                    <TableCell className='tableHeadBorder' align="center">Prowizja</TableCell>
-                                                    <TableCell className='tableHeadBorder' align="center">RRSO</TableCell>
-                                                    <TableCell className='tableHeadBorder' align="center">Oprocentowanie</TableCell>
-                                                    <TableCell className='tableHeadBorder' align="center">Szansa na kredyt</TableCell>
-                                                    <TableCell align="center"></TableCell>
-                                                </TableRow>
-                                            </TableHead>
-                                            <TableBody>
-
-                                                {banks.map((item, index) => (
-                                                    <TableRow key={item.installment + index + Date.now}>
-                                                        <TableCell sx={{ p: '5px', borderLeft: 0, borderRight: '1px solid #E4E4E4', borderBottom: '1px solid #E4E4E4' }} align="center">
-                                                            <img alt='icon' style={{ maxHeight: '50px' }} src={item.img} />
-                                                        </TableCell>
-                                                        <TableCell className='tableBodyBorder' align="center">{item.installment}</TableCell>
-                                                        <TableCell className='tableBodyBorder' align="center">{item.commission}</TableCell>
-                                                        <TableCell className='tableBodyBorder' align="center">{item.rrso}</TableCell>
-                                                        <TableCell className='tableBodyBorder' align="center">{item.interestRate}</TableCell>
-                                                        <TableCell className='tableBodyBorder' align="center">
-                                                            {bestOffer === +item.loanChance.slice(0, -2) &&
-                                                                <div style={{ marginBottom: '10px', backgroundColor: '#AB1D1D', color: '#FFFFFF', padding: '5px', width: '100%', textTransform: 'uppercase' }}>Najlepsza oferta</div>
-                                                            }
-                                                            {item.loanChance}
-                                                        </TableCell>
-                                                        <TableCell sx={{ p: '5px', borderRight: 0 }} align="center">
-                                                            <Button variant="contained" size='small'
-                                                                sx={{ color: '#FFFFFF', backgroundColor: '#314897', textTransform: 'uppercase' }}>wybierz</Button>
-                                                            <InfoRoundedIcon sx={{ color: '#639AE0', ml: '20px' }} />
-                                                        </TableCell>
+                                        <TableContainer component={Paper} sx={{ boxShadow: '0' }}>
+                                            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                                                <TableHead>
+                                                    <TableRow >
+                                                        <TableCell className='tableHeadBorder' align="center">Bank</TableCell>
+                                                        <TableCell className='tableHeadBorder' align="center">Rata</TableCell>
+                                                        <TableCell className='tableHeadBorder' align="center">Prowizja</TableCell>
+                                                        <TableCell className='tableHeadBorder' align="center">RRSO</TableCell>
+                                                        <TableCell className='tableHeadBorder' align="center">Oprocentowanie</TableCell>
+                                                        <TableCell className='tableHeadBorder' align="center">Szansa na kredyt</TableCell>
+                                                        <TableCell align="center"></TableCell>
                                                     </TableRow>
-                                                ))}
-                                            </TableBody>
-                                        </Table>
-                                    </TableContainer>
+                                                </TableHead>
+                                                <TableBody>
+
+                                                    {banks.map((item, index) => (
+                                                        <TableRow key={item.installment + index + Date.now}>
+                                                            <TableCell sx={{ p: '5px', borderLeft: 0, borderRight: '1px solid #E4E4E4', borderBottom: '1px solid #E4E4E4' }} align="center">
+                                                                <img alt='icon' style={{ maxHeight: '50px' }} src={item.img} />
+                                                            </TableCell>
+                                                            <TableCell className='tableBodyBorder' align="center">{item.installment}</TableCell>
+                                                            <TableCell className='tableBodyBorder' align="center">{item.commission}</TableCell>
+                                                            <TableCell className='tableBodyBorder' align="center">{item.rrso}</TableCell>
+                                                            <TableCell className='tableBodyBorder' align="center">{item.interestRate}</TableCell>
+                                                            <TableCell className='tableBodyBorder' align="center">
+                                                                {bestOffer === +item.loanChance.slice(0, -2) &&
+                                                                    <div style={{ marginBottom: '10px', backgroundColor: '#AB1D1D', color: '#FFFFFF', padding: '5px', width: '100%', textTransform: 'uppercase' }}>Najlepsza oferta</div>
+                                                                }
+                                                                {item.loanChance}
+                                                            </TableCell>
+                                                            <TableCell sx={{ p: '5px', borderRight: 0 }} align="center">
+                                                                <Button variant="contained" size='small'
+                                                                    sx={{ color: '#FFFFFF', backgroundColor: '#314897', textTransform: 'uppercase' }}>wybierz</Button>
+                                                                <InfoRoundedIcon sx={{ color: '#639AE0', ml: '20px' }} />
+                                                            </TableCell>
+                                                        </TableRow>
+                                                    ))}
+                                                </TableBody>
+                                            </Table>
+                                        </TableContainer>
+                                    </div>
 
                                     <div className='d-flex justify-content-center pt--5'>
                                         <Button variant="text" size='small'

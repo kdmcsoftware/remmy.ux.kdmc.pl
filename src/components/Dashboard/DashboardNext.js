@@ -15,11 +15,9 @@ import bnp from './img/bnp.png';
 import ing from './img/ing.png';
 import mBank from './img/mBank.png';
 import pko from './img/pko.png';
-import swipeLeft2 from './img/swipeLeft2.png';
-import swipeLeft1 from './img/swipeLeft1.png';
+import swipeLeft from './img/swipeLeft.png';
 import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 
 export const DashboardNext = () => {
 
@@ -79,7 +77,7 @@ export const DashboardNext = () => {
                                     <div style={{ position: 'relative' }}>
                                         <div onClick={showSwipeLeftBlock} className={`${swipeLeftBlock ? 'swipeLeftBlock' : 'swipeLeftBlockNone'}`}>
                                             <div className='swipeLeftItem'>
-                                                <img alt='swipeLeft' src={swipeLeft2} />
+                                                <img alt='swipeLeft' src={swipeLeft} />
                                             </div>
                                             <span>Click to close</span>
                                         </div>

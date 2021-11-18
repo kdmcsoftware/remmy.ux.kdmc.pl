@@ -4,7 +4,7 @@ import EuroRoundedIcon from '@mui/icons-material/EuroRounded';
 import HomeWorkRoundedIcon from '@mui/icons-material/HomeWorkRounded';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import SavingsRoundedIcon from '@mui/icons-material/SavingsRounded';
-import { Button, Checkbox, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { Button, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import './dashboard.scss';
 import { DashboardBlock } from "./DashboardBlock/DashboardBlock";
@@ -15,31 +15,24 @@ import bnp from './img/bnp.png';
 import ing from './img/ing.png';
 import mBank from './img/mBank.png';
 import pko from './img/pko.png';
-import ArrowDropDownCircleRoundedIcon from '@mui/icons-material/ArrowDropDownCircleRounded';
+import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 
 export const DashboardNext = () => {
 
     const [bestOffer, setBestOffer] = useState(0)
-    const [checked1, setChecked1] = useState(true)
-    const [checked2, setChecked2] = useState(true)
-    const [checked3, setChecked3] = useState(false)
-    const [showTable, setShowTable] = useState(true)
+    // const [checked1, setChecked1] = useState(true)
+    // const [checked2, setChecked2] = useState(true)
+    // const [checked3, setChecked3] = useState(false)
 
     useEffect(() => {
         findBestOffer()
     })
 
-    const handleChange1 = (event) => { setChecked1(event.target.checked) }
-    const handleChange2 = (event) => { setChecked2(event.target.checked) }
-    const handleChange3 = (event) => { setChecked3(event.target.checked) }
-
-    const showTableToggle = () => {
-        if (showTable === true) {
-            setShowTable(false)
-        } else {
-            setShowTable(true)
-        }
-    }
+    // const handleChange1 = (event) => { setChecked1(event.target.checked) }
+    // const handleChange2 = (event) => { setChecked2(event.target.checked) }
+    // const handleChange3 = (event) => { setChecked3(event.target.checked) }
 
     const banks = [
         { img: ing, installment: '1,135.00 PLN', commission: '0.10 %', rrso: '1.23 %', interestRate: '2.50 %', loanChance: '70 %' },
@@ -75,57 +68,61 @@ export const DashboardNext = () => {
                             </Grid>
 
                             <Grid item xxs={12} className='mt--15'>
-                                <DashboardBlock title='Twoje rozwiązanie'>
-                                    <ArrowDropDownCircleRoundedIcon onClick={showTableToggle} fontSize='large' sx={{ color: '#639AE0', position: 'absolute', top: '0', right: '10px' }} />
-                                    <div style={{ display: `${showTable ? 'block' : 'none'}` }}>
-                                        <TableContainer component={Paper} sx={{ boxShadow: '0' }}>
-                                            <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                                                <TableHead>
-                                                    <TableRow >
-                                                        <TableCell className='tableHeadBorder' align="center">Bank</TableCell>
-                                                        <TableCell className='tableHeadBorder' align="center">Rata</TableCell>
-                                                        <TableCell className='tableHeadBorder' align="center">Prowizja</TableCell>
-                                                        <TableCell className='tableHeadBorder' align="center">RRSO</TableCell>
-                                                        <TableCell className='tableHeadBorder' align="center">Oprocentowanie</TableCell>
-                                                        <TableCell className='tableHeadBorder' align="center">Szansa na kredyt</TableCell>
-                                                        <TableCell align="center"></TableCell>
-                                                    </TableRow>
-                                                </TableHead>
-                                                <TableBody>
-
-                                                    {banks.map((item, index) => (
-                                                        <TableRow key={item.installment + index + Date.now}>
-                                                            <TableCell sx={{ p: '5px', borderLeft: 0, borderRight: '1px solid #E4E4E4', borderBottom: '1px solid #E4E4E4' }} align="center">
-                                                                <img alt='icon' style={{ maxHeight: '50px' }} src={item.img} />
-                                                            </TableCell>
-                                                            <TableCell className='tableBodyBorder' align="center">{item.installment}</TableCell>
-                                                            <TableCell className='tableBodyBorder' align="center">{item.commission}</TableCell>
-                                                            <TableCell className='tableBodyBorder' align="center">{item.rrso}</TableCell>
-                                                            <TableCell className='tableBodyBorder' align="center">{item.interestRate}</TableCell>
-                                                            <TableCell className='tableBodyBorder' align="center">
-                                                                {bestOffer === +item.loanChance.slice(0, -2) &&
-                                                                    <div style={{ marginBottom: '10px', backgroundColor: '#AB1D1D', color: '#FFFFFF', padding: '5px', width: '100%', textTransform: 'uppercase' }}>Najlepsza oferta</div>
-                                                                }
-                                                                {item.loanChance}
-                                                            </TableCell>
-                                                            <TableCell sx={{ p: '5px', borderRight: 0 }} align="center">
-                                                                <Button variant="contained" size='small'
-                                                                    sx={{ color: '#FFFFFF', backgroundColor: '#314897', textTransform: 'uppercase' }}>wybierz</Button>
-                                                                <InfoRoundedIcon sx={{ color: '#639AE0', ml: '20px' }} />
-                                                            </TableCell>
-                                                        </TableRow>
-                                                    ))}
-                                                </TableBody>
-                                            </Table>
-                                        </TableContainer>
-
-                                        <div className='d-flex justify-content-center pt--5'>
-                                            <Button variant="text" size='small'
-                                                sx={{ color: '#314897', fontWeight: '600' }}
-                                            >
-                                                pokaż więcej
-                                            </Button>
+                                <DashboardBlock title='Produkty dla ciebie'>
+                                    <div className='d-flex justify-content-center'>
+                                        <div className=' mb--20 d-flex d-md-none justify-content-center align-items-center'
+                                            style={{ backgroundColor: '#E5E5E5', width: '60%' }}>
+                                            <span style={{ textTransform: 'uppercase' }}>przewiń &nbsp;</span>
+                                            <ArrowForwardRoundedIcon />
                                         </div>
+                                    </div>
+                                    <TableContainer component={Paper} sx={{ boxShadow: '0' }}>
+                                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                                            <TableHead>
+                                                <TableRow >
+                                                    <TableCell className='tableHeadBorder' align="center">Bank</TableCell>
+                                                    <TableCell className='tableHeadBorder' align="center">Rata</TableCell>
+                                                    <TableCell className='tableHeadBorder' align="center">Prowizja</TableCell>
+                                                    <TableCell className='tableHeadBorder' align="center">RRSO</TableCell>
+                                                    <TableCell className='tableHeadBorder' align="center">Oprocentowanie</TableCell>
+                                                    <TableCell className='tableHeadBorder' align="center">Szansa na kredyt</TableCell>
+                                                    <TableCell align="center"></TableCell>
+                                                </TableRow>
+                                            </TableHead>
+                                            <TableBody>
+
+                                                {banks.map((item, index) => (
+                                                    <TableRow key={item.installment + index + Date.now}>
+                                                        <TableCell sx={{ p: '5px', borderLeft: 0, borderRight: '1px solid #E4E4E4', borderBottom: '1px solid #E4E4E4' }} align="center">
+                                                            <img alt='icon' style={{ maxHeight: '50px' }} src={item.img} />
+                                                        </TableCell>
+                                                        <TableCell className='tableBodyBorder' align="center">{item.installment}</TableCell>
+                                                        <TableCell className='tableBodyBorder' align="center">{item.commission}</TableCell>
+                                                        <TableCell className='tableBodyBorder' align="center">{item.rrso}</TableCell>
+                                                        <TableCell className='tableBodyBorder' align="center">{item.interestRate}</TableCell>
+                                                        <TableCell className='tableBodyBorder' align="center">
+                                                            {bestOffer === +item.loanChance.slice(0, -2) &&
+                                                                <div style={{ marginBottom: '10px', backgroundColor: '#AB1D1D', color: '#FFFFFF', padding: '5px', width: '100%', textTransform: 'uppercase' }}>Najlepsza oferta</div>
+                                                            }
+                                                            {item.loanChance}
+                                                        </TableCell>
+                                                        <TableCell sx={{ p: '5px', borderRight: 0 }} align="center">
+                                                            <Button variant="contained" size='small'
+                                                                sx={{ color: '#FFFFFF', backgroundColor: '#314897', textTransform: 'uppercase' }}>wybierz</Button>
+                                                            <InfoRoundedIcon sx={{ color: '#639AE0', ml: '20px' }} />
+                                                        </TableCell>
+                                                    </TableRow>
+                                                ))}
+                                            </TableBody>
+                                        </Table>
+                                    </TableContainer>
+
+                                    <div className='d-flex justify-content-center pt--5'>
+                                        <Button variant="text" size='small'
+                                            sx={{ color: '#314897', fontWeight: '600' }}
+                                        >
+                                            pokaż więcej
+                                        </Button>
                                     </div>
                                 </DashboardBlock>
                             </Grid>
@@ -187,12 +184,16 @@ export const DashboardNext = () => {
 
                                             <Grid item xxs={12} lg={6} className='showTopBorder' sx={{ p: '0px 0px 0px 20px' }}>
                                                 <div className='showLeftBorder'></div>
-                                                <div className='d-flex align-items-center' style={{ padding: '15px 0px' }}>
-                                                    <Grid item xxs={11} sx={{ pr: '10px' }}>
-                                                        <span>Kwalifikujesz się na “Mieszkanie bez wkładu własnego”</span>
-                                                    </Grid>
-                                                    <Grid item xxs={1}>
-                                                        <Checkbox
+                                                <div style={{ padding: '15px 0px' }}>
+                                                    <Grid container className='d-flex align-items-center'>
+                                                        <Grid item xxs={11} sx={{ pr: '10px' }}>
+                                                            <span>Kwalifikujesz się na “Mieszkanie bez wkładu własnego”</span>
+                                                        </Grid>
+                                                        <Grid item xxs={1}>
+
+                                                            <DoneRoundedIcon sx={{ color: '#314897' }} />
+
+                                                            {/* <Checkbox
                                                             sx={{
                                                                 color: '#989898',
                                                                 '&.Mui-checked': {
@@ -202,15 +203,20 @@ export const DashboardNext = () => {
                                                             checked={checked1}
                                                             onChange={handleChange1}
                                                             inputProps={{ 'aria-label': 'one' }}
-                                                        />
+                                                        /> */}
+                                                        </Grid>
                                                     </Grid>
                                                 </div>
-                                                <div className='d-flex align-items-center' style={{ padding: '15px 0px' }}>
-                                                    <Grid item xxs={11} sx={{ pr: '10px' }}>
-                                                        <span>Kwalifikacja na fundusz gwarancyjny</span>
-                                                    </Grid>
-                                                    <Grid item xxs={1}>
-                                                        <Checkbox
+                                                <div style={{ padding: '15px 0px' }}>
+                                                    <Grid container className='d-flex align-items-center'>
+                                                        <Grid item xxs={11} sx={{ pr: '10px' }}>
+                                                            <span>Kwalifikacja na fundusz gwarancyjny</span>
+                                                        </Grid>
+                                                        <Grid item xxs={1}>
+
+                                                            <DoneRoundedIcon sx={{ color: '#314897' }} />
+
+                                                            {/* <Checkbox
                                                             sx={{
                                                                 color: '#989898',
                                                                 '&.Mui-checked': {
@@ -220,15 +226,20 @@ export const DashboardNext = () => {
                                                             checked={checked2}
                                                             onChange={handleChange2}
                                                             inputProps={{ 'aria-label': 'two' }}
-                                                        />
+                                                        /> */}
+                                                        </Grid>
                                                     </Grid>
                                                 </div>
-                                                <div className='d-flex align-items-center' style={{ padding: '15px 0px 0px 0px' }}>
-                                                    <Grid item xxs={11} sx={{ pr: '10px' }}>
-                                                        <span>Ubezpieczenie wkładu własnego: </span>
-                                                    </Grid>
-                                                    <Grid item xxs={1}>
-                                                        <Checkbox
+                                                <div style={{ padding: '15px 0px 0px 0px' }}>
+                                                    <Grid container className='d-flex align-items-center'>
+                                                        <Grid item xxs={11} sx={{ pr: '10px' }}>
+                                                            <span>Ubezpieczenie wkładu własnego: </span>
+                                                        </Grid>
+                                                        <Grid item xxs={1}>
+
+                                                            <CloseRoundedIcon sx={{ color: '#989898' }} />
+
+                                                            {/* <Checkbox
                                                             sx={{
                                                                 color: '#989898',
                                                                 '&.Mui-checked': {
@@ -238,13 +249,14 @@ export const DashboardNext = () => {
                                                             checked={checked3}
                                                             onChange={handleChange3}
                                                             inputProps={{ 'aria-label': 'three' }}
-                                                        />
+                                                        /> */}
+                                                        </Grid>
+
+                                                        <Grid item xxs={12}>
+                                                            <span style={{ color: '#989898' }}>59.21 PLN</span>
+                                                        </Grid>
                                                     </Grid>
-                                                </div>
-                                                <div style={{ padding: '0px 0px' }}>
-                                                    <Grid item xxs={12} >
-                                                        <span style={{ color: '#989898' }}>59.21 PLN</span>
-                                                    </Grid>
+
                                                 </div>
                                             </Grid>
                                         </Grid>

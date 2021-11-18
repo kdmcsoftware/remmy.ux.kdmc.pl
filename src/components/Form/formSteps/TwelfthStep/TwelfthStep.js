@@ -1,4 +1,4 @@
-import { Container, FormControl, FormControlLabel, Grid, Radio, RadioGroup, Slider, TextField } from "@mui/material";
+import { Container, FormControl, FormControlLabel, Grid, Radio, RadioGroup, TextField } from "@mui/material";
 import React, { useState, useContext } from "react";
 import { MyButton } from "../../../common/MyButton";
 import '../../radioStep.scss'
@@ -6,15 +6,10 @@ import { StepsContext } from '../../StepsState'
 
 export const TwelfthStep = () => {
 
-    const [sliderValue, setSliderValue] = useState(0);
     const [radioValue, setRadioValue] = useState('one');
 
     const handleChangeRadio = (event) => {
         setRadioValue(event.target.value);
-    };
-
-    const handleChangeSlider = (event, newValue) => {
-        setSliderValue(newValue);
     };
 
     const { steps, setSteps, twelfthStepRef, thirteenthStepRef } = useContext(StepsContext)

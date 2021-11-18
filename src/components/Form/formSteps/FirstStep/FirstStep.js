@@ -1,8 +1,8 @@
 import { Container, FormControl, FormControlLabel, Grid, Radio, RadioGroup } from "@mui/material";
-import React, { useState, useContext, useRef, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { MyButton } from "../../../common/MyButton";
 import '../../radioStep.scss';
-import { StepsContext } from '../../StepsState'
+import { StepsContext } from '../../StepsState';
 
 export const FirstStep = () => {
 

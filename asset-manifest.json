@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/remmy.ux.kdmc.pl/static/css/main.b5d2ea44.chunk.css",
-    "main.js": "/remmy.ux.kdmc.pl/static/js/main.ad21c5cf.chunk.js",
-    "main.js.map": "/remmy.ux.kdmc.pl/static/js/main.ad21c5cf.chunk.js.map",
+    "main.css": "/remmy.ux.kdmc.pl/static/css/main.6e3f8e7e.chunk.css",
+    "main.js": "/remmy.ux.kdmc.pl/static/js/main.a901a669.chunk.js",
+    "main.js.map": "/remmy.ux.kdmc.pl/static/js/main.a901a669.chunk.js.map",
     "runtime-main.js": "/remmy.ux.kdmc.pl/static/js/runtime-main.946f90fd.js",
     "runtime-main.js.map": "/remmy.ux.kdmc.pl/static/js/runtime-main.946f90fd.js.map",
-    "static/js/2.4f762981.chunk.js": "/remmy.ux.kdmc.pl/static/js/2.4f762981.chunk.js",
-    "static/js/2.4f762981.chunk.js.map": "/remmy.ux.kdmc.pl/static/js/2.4f762981.chunk.js.map",
+    "static/js/2.317561d5.chunk.js": "/remmy.ux.kdmc.pl/static/js/2.317561d5.chunk.js",
+    "static/js/2.317561d5.chunk.js.map": "/remmy.ux.kdmc.pl/static/js/2.317561d5.chunk.js.map",
     "index.html": "/remmy.ux.kdmc.pl/index.html",
-    "static/css/main.b5d2ea44.chunk.css.map": "/remmy.ux.kdmc.pl/static/css/main.b5d2ea44.chunk.css.map",
-    "static/js/2.4f762981.chunk.js.LICENSE.txt": "/remmy.ux.kdmc.pl/static/js/2.4f762981.chunk.js.LICENSE.txt",
+    "static/css/main.6e3f8e7e.chunk.css.map": "/remmy.ux.kdmc.pl/static/css/main.6e3f8e7e.chunk.css.map",
+    "static/js/2.317561d5.chunk.js.LICENSE.txt": "/remmy.ux.kdmc.pl/static/js/2.317561d5.chunk.js.LICENSE.txt",
     "static/media/bnp.8c8944f1.png": "/remmy.ux.kdmc.pl/static/media/bnp.8c8944f1.png",
     "static/media/swipeLeft.867f1fa9.png": "/remmy.ux.kdmc.pl/static/media/swipeLeft.867f1fa9.png"
   },
   "entrypoints": [
     "static/js/runtime-main.946f90fd.js",
-    "static/js/2.4f762981.chunk.js",
-    "static/css/main.b5d2ea44.chunk.css",
-    "static/js/main.ad21c5cf.chunk.js"
+    "static/js/2.317561d5.chunk.js",
+    "static/css/main.6e3f8e7e.chunk.css",
+    "static/js/main.a901a669.chunk.js"
   ]
 }

@@ -1,13 +1,17 @@
 import { Container, FormControl, Grid, InputLabel, Select, MenuItem } from "@mui/material";
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { MyButton } from "../../../common/MyButton";
 import '../../radioStep.scss';
 import { StepsContext } from '../../StepsState'
 
-export const FifteenthStep = () => {
+export const FifteenthStep = ({ countProgress }) => {
 
     const [minPrice, setMinPrice] = useState('none');
     const [maxPrice, setMaxPrice] = useState('none');
+
+    useEffect(() => {
+        countProgress(15)
+    })
 
     const changeMinPrice = (event) => {
         setMinPrice(event.target.value);
@@ -30,7 +34,7 @@ export const FifteenthStep = () => {
     return (
         <Container ref={fifteenthStepRef} className='radioStep' sx={{ minHeight: '100vh' }}>
             <Grid container sx={{ pt: '100px' }}>
-                <Grid item xs={12} md={6}>
+                <Grid item xxs={12} md={8}>
                     <div>
                         <h2 style={{ lineHeight: '1.5' }}>Podaj swoje miesięczne dochody</h2>
                     </div>

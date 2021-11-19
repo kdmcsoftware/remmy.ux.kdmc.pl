@@ -17,18 +17,20 @@ export const StartStep = () => {
     }
 
     return (
-        <Container className='startStep' sx={{ minHeight: '100vh' }}>
-            <Grid container spacing={3} sx={{ pt: '100px' }}>
-                <Grid item xs={12} md={6}>
+        <Container>
+            <Grid container className='startStep' sx={{ pt: '100px', minHeight: '100vh' }}>
+                <Grid item xxs={12} md={8}>
                     <div>
                         <h2 style={{ lineHeight: '1.5' }}>Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod</h2>
                     </div>
 
-                    <Box sx={{ display: { xxs: 'block !important', md: 'none !important' } }} component="div"
-                        className='helpInfo'>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.</p>
-                    </Box>
+                    <div className='d-flex justify-content-start'>
+                        <Box sx={{ display: { xxs: 'block !important', md: 'none !important' } }} component="div"
+                            className='helpInfo'>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua.</p>
+                        </Box>
+                    </div>
 
                     <div>
                         <ul style={{ margin: '0px' }}>
@@ -44,13 +46,16 @@ export const StartStep = () => {
                     <MyButton buttonText='ZACZNIJ' onClick={nextStep} />
                 </Grid>
 
-                <Grid item xs={12} md={3}>
-                    <Box sx={{ display: { xxs: 'none !important', md: 'block !important' } }} component="div"
-                        className='helpInfo'>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.</p></Box>
+                <Grid item xxs={12} md={4} sx={{ pl: '15px' }}>
+                    <div>
+                        <Box sx={{ display: { xxs: 'none !important', md: 'block !important' } }} component="div" className='helpInfo'>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </Box>
+                    </div>
+
                 </Grid>
             </Grid>
         </Container>
+
     )
 }

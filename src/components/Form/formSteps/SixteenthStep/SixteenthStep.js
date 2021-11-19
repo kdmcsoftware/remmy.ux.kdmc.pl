@@ -4,18 +4,29 @@ import { MyButton } from "../../../common/MyButton";
 import '../../radioStep.scss'
 import { StepsContext } from '../../StepsState'
 
-export const SixteenthStep = () => {
+export const SixteenthStep = ({ countProgress }) => {
 
-    const [value, setValue] = useState('one');
+    const [value, setValue] = useState('one')
     const { steps, setSteps, sixteenthStepRef, seventeenthStepRef } = useContext(StepsContext)
 
     useEffect(() => {
         if (value === 'two') {
             if (steps.seventeenthStep === true) {
                 setSteps((prevState) => ({ ...prevState, seventeenthStep: false }))
+
             }
         }
+
     }, [value])
+
+    useEffect(() => {
+        if (value === 'one') {
+            countProgress(16)
+        }
+        else {
+            countProgress(17)
+        }
+    }, [value, countProgress])
 
     const handleChange = (event) => {
         setValue(event.target.value);
@@ -34,7 +45,7 @@ export const SixteenthStep = () => {
     return (
         <Container ref={sixteenthStepRef} className='radioStep' sx={{ minHeight: '100vh' }}>
             <Grid container sx={{ pt: '100px' }}>
-                <Grid item xs={12} md={6}>
+                <Grid item xxs={12} md={8}>
                     <div>
                         <h2 style={{ lineHeight: '1.5' }}>Czy posiadasz inne zobowiązania kredytywe?</h2>
                     </div>
@@ -44,7 +55,6 @@ export const SixteenthStep = () => {
                             <RadioGroup
                                 aria-label="gender"
                                 name="controlled-radio-buttons-group"
-                                defaultValue="one"
                                 value={value}
                                 onChange={handleChange}
                             >

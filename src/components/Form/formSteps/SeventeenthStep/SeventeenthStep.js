@@ -1,13 +1,17 @@
 import { Container, FormControl, FormControlLabel, Grid, Radio, RadioGroup } from "@mui/material";
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { MyButton } from "../../../common/MyButton";
 import '../../radioStep.scss';
 import { StepsContext } from '../../StepsState'
 
-export const SeventeenthStep = () => {
+export const SeventeenthStep = ({ countProgress }) => {
 
     const [value, setValue] = useState('one');
     const { seventeenthStepRef } = useContext(StepsContext)
+
+    useEffect(() => {
+        countProgress(17)
+    })
 
     const handleChange = (event) => {
         setValue(event.target.value);
@@ -16,9 +20,9 @@ export const SeventeenthStep = () => {
     return (
         <Container ref={seventeenthStepRef} className='radioStep' sx={{ minHeight: '100vh' }}>
             <Grid container sx={{ pt: '100px' }}>
-                <Grid item xs={12} md={6}>
+                <Grid item xxs={12} md={8}>
                     <div>
-                        <h2 style={{ lineHeight: '1.5' }}>Czy posiadasz inne zobowiązania kredytywe?</h2>
+                        <h2 style={{ lineHeight: '1.5' }}>Jakie formy kredytu posiadasz?</h2>
                     </div>
 
                     <div>

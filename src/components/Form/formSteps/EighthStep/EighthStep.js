@@ -1,12 +1,16 @@
 import { Container, Grid, TextField, InputAdornment } from "@mui/material";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { MyButton } from "../../../common/MyButton";
 import '../../radioStep.scss';
 import { StepsContext } from '../../StepsState'
 
-export const EighthStep = () => {
+export const EighthStep = ({ countProgress }) => {
 
     const { steps, setSteps, eighthStepRef, ninthStepRef } = useContext(StepsContext)
+
+    useEffect(() => {
+        countProgress(8)
+    })
 
     const nextStep = async () => {
         if (steps.ninthStep !== true) {
@@ -19,7 +23,7 @@ export const EighthStep = () => {
     return (
         <Container ref={eighthStepRef} className='radioStep' sx={{ minHeight: '100vh' }}>
             <Grid container sx={{ pt: '100px' }}>
-                <Grid item xs={12} md={6}>
+                <Grid item xxs={12} md={8}>
                     <div>
                         <h2 style={{ lineHeight: '1.5' }}>Jaka jest wartość nieruchomości, na którą chcesz przeznaczyć kredyt?</h2>
                     </div>

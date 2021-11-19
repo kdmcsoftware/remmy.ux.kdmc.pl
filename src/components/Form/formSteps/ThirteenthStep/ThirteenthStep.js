@@ -1,12 +1,16 @@
 import { Container, Grid, TextField } from "@mui/material";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { MyButton } from "../../../common/MyButton";
 import '../../radioStep.scss';
 import { StepsContext } from '../../StepsState'
 
-export const ThirteenthStep = () => {
+export const ThirteenthStep = ({ countProgress }) => {
 
     const { steps, setSteps, thirteenthStepRef, fourteenthStepRef } = useContext(StepsContext)
+
+    useEffect(() => {
+        countProgress(13)
+    })
 
     const nextStep = async () => {
         if (steps.fourteenthStep !== true) {
@@ -19,7 +23,7 @@ export const ThirteenthStep = () => {
     return (
         <Container ref={thirteenthStepRef} className='radioStep' sx={{ minHeight: '100vh' }}>
             <Grid container sx={{ pt: '100px' }}>
-                <Grid item xs={12} md={6}>
+                <Grid item xxs={12} md={8}>
                     <div>
                         <h2 style={{ lineHeight: '1.5' }}>Dane osobiste</h2>
                     </div>

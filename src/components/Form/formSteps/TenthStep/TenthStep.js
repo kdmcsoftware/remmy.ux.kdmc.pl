@@ -1,11 +1,15 @@
 import { Container, Grid, Slider } from "@mui/material";
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { MyButton } from "../../../common/MyButton";
 import { StepsContext } from '../../StepsState'
 
-export const TenthStep = () => {
+export const TenthStep = ({ countProgress }) => {
 
     const [value, setValue] = useState(1);
+
+    useEffect(() => {
+        countProgress(10)
+    })
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -28,7 +32,7 @@ export const TenthStep = () => {
     return (
         <Container ref={tenthStepRef} sx={{ minHeight: '100vh' }}>
             <Grid container sx={{ pt: '100px' }}>
-                <Grid item xs={12} md={6}>
+                <Grid item xxs={12} md={8}>
                     <div>
                         <h2 style={{ lineHeight: '1.5' }}>Ile czasu chcesz spłacać kredyt?</h2>
                     </div>

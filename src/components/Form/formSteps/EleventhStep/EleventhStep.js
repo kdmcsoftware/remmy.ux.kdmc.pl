@@ -1,12 +1,16 @@
 import { Container, Grid, TextField } from "@mui/material";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { MyButton } from "../../../common/MyButton";
 import '../../radioStep.scss';
 import { StepsContext } from '../../StepsState'
 
-export const EleventhStep = () => {
+export const EleventhStep = ({ countProgress }) => {
 
     const { steps, setSteps, eleventhStepRef, twelfthStepRef } = useContext(StepsContext)
+
+    useEffect(() => {
+        countProgress(11)
+    })
 
     const nextStep = async () => {
         if (steps.twelfthStep !== true) {
@@ -19,7 +23,7 @@ export const EleventhStep = () => {
     return (
         <Container ref={eleventhStepRef} className='radioStep' sx={{ minHeight: '100vh' }}>
             <Grid container sx={{ pt: '100px' }}>
-                <Grid item xxs={12} md={6}>
+                <Grid item xxs={12} md={8}>
                     <div>
                         <h2 style={{ lineHeight: '1.5' }}>Podaj adres domu który chcesz kupić</h2>
                     </div>

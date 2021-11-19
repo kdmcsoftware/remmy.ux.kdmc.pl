@@ -1,12 +1,16 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Container, FormControl, FormControlLabel, Grid, Radio, RadioGroup } from "@mui/material";
 import { MyButton } from "../../../common/MyButton";
 import '../../radioStep.scss'
 import { StepsContext } from '../../StepsState'
 
-export const SeventhStep = () => {
+export const SeventhStep = ({ countProgress }) => {
 
     const [value, setValue] = useState('one');
+
+    useEffect(() => {
+        countProgress(7)
+    })
 
     const handleChange = (event) => {
         setValue(event.target.value);
@@ -25,7 +29,7 @@ export const SeventhStep = () => {
     return (
         <Container ref={seventhStepRef} className='radioStep' sx={{ minHeight: '100vh' }}>
             <Grid container sx={{ pt: '100px' }} >
-                <Grid item xs={12} md={6}>
+                <Grid item xxs={12} md={8}>
                     <div>
                         <h2 style={{ lineHeight: '1.5' }}>Czy masz zamiar remontować mieszkanie?</h2>
                     </div>

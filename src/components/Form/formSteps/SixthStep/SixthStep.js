@@ -1,12 +1,16 @@
 import { Container, FormControl, FormControlLabel, Grid, Radio, RadioGroup } from "@mui/material";
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { MyButton } from "../../../common/MyButton";
 import '../../radioStep.scss'
 import { StepsContext } from '../../StepsState'
 
-export const SixthStep = () => {
+export const SixthStep = ({ countProgress }) => {
 
     const [value, setValue] = useState('one');
+
+    useEffect(() => {
+        countProgress(6)
+    })
 
     const handleChange = (event) => {
         setValue(event.target.value);
@@ -25,7 +29,7 @@ export const SixthStep = () => {
     return (
         <Container ref={sixthStepRef} className='radioStep' sx={{ minHeight: '100vh' }}>
             <Grid container sx={{ pt: '100px' }}>
-                <Grid item xs={12} md={6}>
+                <Grid item xxs={12} md={8}>
                     <div>
                         <h2 style={{ lineHeight: '1.5' }}>Czy zamierzasz kupić mieszkanie bezpośrednio od dewelopera?</h2>
                     </div>

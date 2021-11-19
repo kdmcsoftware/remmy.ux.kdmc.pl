@@ -56,7 +56,7 @@ export const MainForm = () => {
     }
 
     return (
-        <div>
+        <div style={{ position: 'relative' }}>
             <Header />
             <Grid container>
                 <Grid item xxs={12} md={9} xl={10} sx={{ pl: '30px' }}>

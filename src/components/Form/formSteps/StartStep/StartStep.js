@@ -46,7 +46,7 @@ export const StartStep = () => {
                     <MyButton buttonText='ZACZNIJ' onClick={nextStep} />
                 </Grid>
 
-                <Grid item xxs={12} md={4} sx={{ pl: '15px' }}>
+                <Grid item xxs={12} md={4} sx={{ pl: '15px', pb: '100px' }}>
                     <div>
                         <Box sx={{ display: { xxs: 'none !important', md: 'block !important' } }} component="div" className='helpInfo'>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
